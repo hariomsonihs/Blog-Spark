@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlogSpark | Reading</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="app.css" />
+    <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet"/>
+    <style>
+      .read-page {
+        max-width: 760px;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        align-self: center;
+      }
+
+      .read-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: var(--surface-strong);
+        color: var(--text);
+        font-size: 0.88rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      .read-back:hover {
+        background: rgba(255,255,255,1);
+        box-shadow: 0 4px 12px rgba(68,94,139,0.12);
+      }
+
+      .read-card {
+        margin-top: 1rem;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-xl);
+        background: var(--surface-strong);
+        padding: clamp(1.2rem, 4vw, 2.4rem);
+        overflow: hidden;
+        min-width: 0;
+      }
+
+      .read-card .badge-row {
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+
+      .read-card h1 {
+        margin: 0 0 0.6rem;
+        font-size: clamp(1.4rem, 4vw, 2.1rem);
+        line-height: 1.22;
+        color: var(--text);
+      }
+
+      .read-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: center;
+        margin-bottom: 1.4rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.86rem;
+      }
+
+      .read-body {
+        font-size: 1.05rem;
+        line-height: 1.82;
+        color: #3a5278;
+        padding: 0;
+        border: none;
+        word-break: break-word;
+        overflow-wrap: break-word;
+      }
+      /* Override Quill ql-editor defaults for read page */
+      .read-body.ql-editor {
+        padding: 0;
+        border: none;
+        font-size: 1.05rem;
+        line-height: 1.82;
+        color: #3a5278;
+        font-family: "Outfit", sans-serif;
+      }
+      .read-body h1, .read-body h2, .read-body h3, .read-body h4 { color: var(--text); margin-top: 1.4rem; margin-bottom: .4rem; }
+      .read-body p { margin: .7rem 0; }
+      .read-body ul, .read-body ol { padding-left: 1.6rem; margin: .6rem 0; }
+      .read-body li { margin: .25rem 0; }
+      .read-body pre { background: rgba(221,235,255,.6); border-radius: 10px; padding: .8rem; font-size: .88rem; white-space: pre-wrap; }
+      .read-body blockquote { border-left: 3px solid var(--brand-2); padding-left: .9rem; color: var(--muted); margin: .6rem 0; font-style: italic; }
+      .read-body a { color: var(--brand-2); }
+
+      .read-tags {
+        margin-top: 1.6rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--line);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+
+      .read-skeleton {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1.5rem;
+      }
+
+      .skel {
+        border-radius: 8px;
+        background: linear-gradient(90deg, rgba(97,126,177,0.12) 25%, rgba(97,126,177,0.22) 50%, rgba(97,126,177,0.12) 75%);
+        background-size: 200% 100%;
+        animation: shimmer 1.4s infinite;
+      }
+
+      .skel-title { height: 36px; width: 75%; }
+      .skel-meta  { height: 18px; width: 40%; }
+      .skel-line  { height: 16px; width: 100%; }
+      .skel-line.short { width: 60%; }
+
+      @keyframes shimmer {
+        from { background-position: 200% 0; }
+        to   { background-position: -200% 0; }
+      }
+
+      .read-error {
+        text-align: center;
+        padding: 2rem 1rem;
+        color: var(--muted);
+      }
+
+      .read-error h2 { margin: 0 0 0.5rem; color: var(--text); }
+
+      /* ── Project detail styles ── */
+      .proj-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.4rem;
+      }
+
+      .proj-link-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.48rem 1rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.2s ease;
+        border: 1px solid transparent;
+      }
+
+      .proj-link-btn svg {
+        width: 15px;
+        height: 15px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        flex-shrink: 0;
+      }
+
+      .proj-live   { background: linear-gradient(115deg,#3cc8a7,#5f8eff); color:#fff; }
+      .proj-github { background: #24292e; color: #fff; }
+      .proj-output { background: linear-gradient(115deg,#8b5cf6,#ec4899); color: #fff; }
+      .proj-link-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.18); }
+
+      .proj-section-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        margin: 1.4rem 0 0.5rem;
+      }
+
+      .proj-code-wrap {
+        margin-top: 1.6rem;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+      }
+
+      .proj-tabs {
+        display: flex;
+        overflow-x: auto;
+        scrollbar-width: none;
+        background: rgba(221,235,255,0.45);
+        border-bottom: 1px solid var(--line);
+        gap: 0;
+      }
+
+      .proj-tabs::-webkit-scrollbar { display: none; }
+
+      .proj-tab {
+        flex-shrink: 0;
+        padding: 0.55rem 1rem;
+        font-size: 0.82rem;
+        font-weight: 500;
+        font-family: Consolas, monospace;
+        color: var(--muted);
+        background: transparent;
+        border: none;
+        border-right: 1px solid var(--line);
+        cursor: pointer;
+        transition: 0.18s ease;
+        white-space: nowrap;
+      }
+
+      .proj-tab:hover { background: rgba(95,142,255,0.08); color: var(--text); }
+
+      .proj-tab.active {
+        background: rgba(255,255,255,0.9);
+        color: var(--brand-2);
+        font-weight: 700;
+        border-bottom: 2px solid var(--brand-2);
+      }
+
+      .proj-panel { display: none; }
+      .proj-panel.active { display: block; }
+
+      .proj-code-bar {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.45rem 0.8rem;
+        background: rgba(221,235,255,0.3);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .proj-code-filename {
+        font-size: 0.78rem;
+        font-family: Consolas, monospace;
+        color: var(--muted);
+        flex: 1;
+      }
+
+      .proj-copy-btn, .proj-dl-btn {
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.26rem 0.65rem;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.8);
+        color: #2d446f;
+        cursor: pointer;
+        transition: 0.18s ease;
+        white-space: nowrap;
+      }
+
+      .proj-copy-btn:hover { background: rgba(95,142,255,0.12); border-color: rgba(95,142,255,0.3); }
+      .proj-dl-btn:hover   { background: rgba(60,200,167,0.12); border-color: rgba(60,200,167,0.3); }
+
+      .proj-pre {
+        margin: 0;
+        padding: 1rem;
+        overflow-x: auto;
+        background: rgba(240,246,255,0.6);
+        max-height: 480px;
+        overflow-y: auto;
+      }
+
+      .proj-pre code {
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 0.86rem;
+        color: #1a355f;
+        line-height: 1.6;
+        white-space: pre;
+      }
+    </style>
+  </head>
+  <body data-page="read">
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+    <div class="bg-orb orb-c"></div>
+
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="side-drawer" id="sideDrawer">
+      <div class="drawer-top">
+        <div class="brand"><span class="brand-dot"></span><div><strong>BlogSpark</strong><small>Content Hub</small></div></div>
+        <button class="icon-btn" id="closeDrawer" aria-label="Close menu">
+          <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="drawer-section-label">Navigation</div>
+      <nav class="drawer-nav">
+        <a href="index.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21H3z"/></svg>Home</a>
+        <a href="articles.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Articles</a>
+        <a href="tips.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><path d="M12 3a7 7 0 0 0-4 12.8V19h8v-3.2A7 7 0 0 0 12 3z"/><line x1="9" y1="21" x2="15" y2="21"/></svg>Tips &amp; Tricks</a>
+        <a href="facts.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Facts</a>
+        <a href="projects.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Projects</a>
+        <a href="resources.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Resources</a>
+      </nav>
+      <div class="drawer-footer">
+        <div class="drawer-footer-label">Find me on</div>
+        <div class="drawer-socials">
+          <a href="https://instagram.com/hariomsonihs" target="_blank" rel="noopener" class="drawer-social-btn insta" title="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://linkedin.com/in/hariomsonihs" target="_blank" rel="noopener" class="drawer-social-btn linkedin" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://github.com/hariomsonihs" target="_blank" rel="noopener" class="drawer-social-btn github" title="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+        </div>
+      </div>
+      <div class="drawer-credit">Designed &amp; built by<br/><span>Hariom Soni</span></div>
+    </aside>
+
+    <header class="topbar">
+      <a class="brand" href="index.html"><span class="brand-dot"></span><div><strong>BlogSpark</strong><small>Reading</small></div></a>
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link js-nav-link">Home</a>
+        <a href="articles.html" class="nav-link js-nav-link">Articles</a>
+        <a href="tips.html" class="nav-link js-nav-link">Tips</a>
+        <a href="facts.html" class="nav-link js-nav-link">Facts</a>
+        <a href="projects.html" class="nav-link js-nav-link">Projects</a>
+        <a href="resources.html" class="nav-link js-nav-link">Resources</a>
+      </nav>
+      <button class="icon-btn menu-btn" id="openDrawer" aria-label="Open menu">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+      </button>
+    </header>
+
+    <div class="read-page">
+      <a class="read-back" id="backBtn" href="articles.html">← Back</a>
+
+      <div class="read-card" id="readCard">
+        <div class="read-skeleton">
+          <div class="skel skel-title"></div>
+          <div class="skel skel-meta"></div>
+          <div class="skel skel-line"></div>
+          <div class="skel skel-line"></div>
+          <div class="skel skel-line short"></div>
+          <div class="skel skel-line"></div>
+          <div class="skel skel-line short"></div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="bottom-nav">
+      <a href="index.html"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21H3z" /></svg><span>Home</span></a>
+      <a href="articles.html"><svg viewBox="0 0 24 24"><path d="M5 5h14v14H5zM8 9h8M8 12h8M8 15h5" /></svg><span>Articles</span></a>
+      <a href="tips.html"><svg viewBox="0 0 24 24"><path d="M12 3a7 7 0 0 0-4 12.8V19h8v-3.2A7 7 0 0 0 12 3zM9 21h6" /></svg><span>Tips</span></a>
+      <a href="projects.html"><svg viewBox="0 0 24 24"><path d="M4 7h16v10H4zM9 7V5h6v2" /></svg><span>Projects</span></a>
+      <a href="resources.html"><svg viewBox="0 0 24 24"><path d="M13.5 3H5v18h14V8.5L13.5 3zM13 4.5V8h3.5M9 12h6M9 15h6M9 9h3" /></svg><span>Resources</span></a>
+    </nav>
+
+    <script type="module" src="read.js"></script>
+  </body>
+</html>
