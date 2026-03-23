@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Master Flexbox for Perfect Layouts",
+    "category": "CSS",
+    "tags": ["Flexbox", "CSS", "Layout", "Frontend"],
+    "full_content": "Flexbox makes layout easy! Here are some quick tips:\n\n• Use justify-content: center to center items horizontally.\n• Use align-items: center to center items vertically.\n• Use flex-wrap: wrap so items don't overflow on small screens.\n• Use gap to create spacing between elements instead of margin hacks.\n\n.container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 1rem;\n}\n\nTip: Always use Flexbox for one-dimensional layouts (row or column)."
+  },
+  {
+    "title": "Speed Up Your JavaScript with Debouncing",
+    "category": "JavaScript",
+    "tags": ["JavaScript", "Performance", "Optimization"],
+    "full_content": "Debouncing helps improve performance by limiting how often a function runs.\n\nUse case: Search input, resize events.\n\nfunction debounce(fn, delay) {\n  let timer;\n  return function(...args) {\n    clearTimeout(timer);\n    timer = setTimeout(() => fn.apply(this, args), delay);\n  };\n}\n\nExample:\nconst handleSearch = debounce((e) => {\n  console.log(e.target.value);\n}, 500);\n\nTip: Prevents unnecessary API calls and improves UX."
+  },
+  {
+    "title": "Use Git Branching Like a Pro",
+    "category": "Git",
+    "tags": ["Git", "Version Control", "Workflow"],
+    "full_content": "Working with branches keeps your code clean and organized.\n\nTips:\n• Use feature branches for new features.\n• Never work directly on main branch.\n• Use descriptive branch names like feature/login-system.\n\nCommands:\n\ngit checkout -b feature/login\ngit add .\ngit commit -m \"Added login feature\"\ngit push origin feature/login\n\nTip: Makes collaboration easier and avoids breaking production code."
+  },
+  {
+    "title": "Optimize Images for Faster Websites",
+    "category": "Web Performance",
+    "tags": ["Performance", "Images", "Optimization"],
+    "full_content": "Large images slow down your website. Optimize them properly.\n\nTips:\n• Use WebP format instead of PNG/JPG.\n• Compress images using tools like TinyPNG.\n• Use lazy loading.\n\n<img src=\"image.webp\" loading=\"lazy\" alt=\"example\">\n\nTip: Faster websites improve SEO and user experience."
+  },
+  {
+    "title": "Use Environment Variables for Security",
+    "category": "Backend",
+    "tags": ["Security", "Node.js", "Environment Variables"],
+    "full_content": "Never hardcode sensitive data like API keys in your code.\n\nUse .env file:\n\nAPI_KEY=your_secret_key\nPORT=5000\n\nAccess in Node.js:\n\nrequire('dotenv').config();\nconsole.log(process.env.API_KEY);\n\nTip: Keeps your credentials safe and secure."
+  },
+  {
+    "title": "Make Responsive Design Easy with Media Queries",
+    "category": "CSS",
+    "tags": ["Responsive Design", "CSS", "Mobile"],
+    "full_content": "Media queries help you make your website responsive.\n\nExample:\n\n@media (max-width: 768px) {\n  .container {\n    flex-direction: column;\n  }\n}\n\nTip: Always design mobile-first for better scalability."
+  },
+  {
+    "title": "Use Async/Await Instead of Callbacks",
+    "category": "JavaScript",
+    "tags": ["Async", "JavaScript", "Promises"],
+    "full_content": "Async/Await makes asynchronous code cleaner and readable.\n\nExample:\n\nasync function fetchData() {\n  try {\n    const res = await fetch('https://api.example.com');\n    const data = await res.json();\n    console.log(data);\n  } catch (err) {\n    console.error(err);\n  }\n}\n\nTip: Avoid callback hell and write cleaner code."
+  },
+  {
+    "title": "Use Local Storage for Simple Data Persistence",
+    "category": "Web Development",
+    "tags": ["LocalStorage", "Frontend", "JavaScript"],
+    "full_content": "LocalStorage allows you to store data in the browser.\n\nExample:\n\nlocalStorage.setItem('username', 'Hariom');\nconst user = localStorage.getItem('username');\nconsole.log(user);\n\nTip: Useful for saving user preferences like theme or login state."
+  }
+]
