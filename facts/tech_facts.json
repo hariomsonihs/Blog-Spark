@@ -1,0 +1,62 @@
+[
+  {
+    "title": "The First Computer Bug Was a Real Insect",
+    "category": "Computer History",
+    "source_url": "https://www.computerhistory.org/tdih/september/9/",
+    "body": "In 1947, engineers working on the Harvard Mark II computer found a moth stuck in a relay, causing a malfunction. They taped it into their logbook and called it the first 'computer bug'. This is where the term debugging originated."
+  },
+  {
+    "title": "JavaScript Was Created in Just 10 Days",
+    "category": "Programming",
+    "source_url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/About_JavaScript",
+    "body": "JavaScript was created by Brendan Eich in 1995 in just 10 days while working at Netscape. Despite its quick creation, it became one of the most widely used programming languages in the world."
+  },
+  {
+    "title": "The First Website is Still Online",
+    "category": "Web Development",
+    "source_url": "http://info.cern.ch/",
+    "body": "The first website ever created by Tim Berners-Lee in 1991 is still accessible today. It explains the basics of the World Wide Web and how to create web pages."
+  },
+  {
+    "title": "Over 90% of the World's Data Was Created Recently",
+    "category": "Data Science",
+    "source_url": "https://www.ibm.com/blogs/insights-on-business/big-data/what-is-big-data/",
+    "body": "According to IBM, approximately 90% of the world's data has been created in the last few years due to the rise of the internet, social media, and IoT devices."
+  },
+  {
+    "title": "Python Is Named After a Comedy Show",
+    "category": "Programming",
+    "source_url": "https://docs.python.org/3/faq/general.html",
+    "body": "Python was named after the British comedy show 'Monty Python’s Flying Circus', not the snake. Its creator Guido van Rossum wanted a short, unique, and slightly mysterious name."
+  },
+  {
+    "title": "The First Hard Drive Stored Only 5MB",
+    "category": "Technology",
+    "source_url": "https://www.ibm.com/ibm/history/exhibits/storage/storage_350.html",
+    "body": "IBM introduced the first hard disk drive in 1956, called the IBM 350. It could store only 5MB of data and was the size of a refrigerator."
+  },
+  {
+    "title": "There Are Over 700 Programming Languages",
+    "category": "Programming",
+    "source_url": "https://www.computer.org/publications/tech-news/trends/programming-languages",
+    "body": "There are more than 700 programming languages in existence, but only a few dozen are widely used in industry today."
+  },
+  {
+    "title": "Email Was Invented Before the World Wide Web",
+    "category": "Internet",
+    "source_url": "https://www.internetsociety.org/internet/history-internet/brief-history-internet/",
+    "body": "Email was developed in the early 1970s, long before the World Wide Web was introduced in 1991. It was one of the first popular uses of the internet."
+  },
+  {
+    "title": "Google Processes Billions of Searches Daily",
+    "category": "Technology",
+    "source_url": "https://www.internetlivestats.com/google-search-statistics/",
+    "body": "Google processes over 8.5 billion searches per day, making it the most widely used search engine in the world."
+  },
+  {
+    "title": "The First Programmer Was a Woman",
+    "category": "Computer History",
+    "source_url": "https://www.britannica.com/biography/Ada-Lovelace",
+    "body": "Ada Lovelace is considered the first computer programmer. She wrote an algorithm for Charles Babbage’s Analytical Engine in the 19th century."
+  }
+]
