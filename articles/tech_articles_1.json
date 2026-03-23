@@ -1,0 +1,42 @@
+[
+  {
+    "title": "How to Build a Full Stack Web App using MERN Stack",
+    "category": "Web Development",
+    "read_time": "12 min",
+    "short_description": "Learn how to build a complete full stack web application using MongoDB, Express, React, and Node.js with real-world structure.",
+    "full_content": "The MERN stack is one of the most popular technologies for building modern web applications. It consists of MongoDB (database), Express.js (backend framework), React.js (frontend library), and Node.js (runtime environment).\n\nStep 1: Setup Backend\nInstall Node.js and create a project using npm init. Install Express and create a basic server.\n\nStep 2: Connect MongoDB\nUse Mongoose to connect your app to MongoDB. Define schemas and models.\n\nStep 3: Create API Routes\nBuild REST APIs for CRUD operations (Create, Read, Update, Delete).\n\nStep 4: Setup React Frontend\nUse create-react-app or Vite. Build UI components and connect APIs using Axios.\n\nStep 5: State Management\nManage application state using React hooks or Redux.\n\nStep 6: Authentication\nImplement JWT-based authentication for login and signup.\n\nStep 7: Deployment\nDeploy backend on Render/Node server and frontend on Vercel or Netlify.\n\nReal-world example: Blog app, e-commerce platform, portfolio dashboard.\n\nWhy MERN?\n- Full JavaScript stack\n- High performance\n- Scalable architecture\n\nThis stack is widely used in startups and production systems.",
+    "tags": ["MERN", "React", "Node.js", "MongoDB", "Full Stack"]
+  },
+  {
+    "title": "Understanding REST APIs with Real Life Examples",
+    "category": "Backend Development",
+    "read_time": "8 min",
+    "short_description": "A beginner-friendly guide to understanding REST APIs and how they work in real applications.",
+    "full_content": "REST API stands for Representational State Transfer Application Programming Interface. It allows communication between client and server.\n\nExample:\nWhen you use a food delivery app, your app requests data from a server using APIs.\n\nHTTP Methods:\nGET - Fetch data\nPOST - Create data\nPUT - Update data\nDELETE - Remove data\n\nStep-by-step working:\n1. Client sends request\n2. Server processes request\n3. Server sends response (JSON format)\n\nReal-world example:\nLogin system, payment gateway, weather apps.\n\nTools used:\n- Postman (API testing)\n- Express.js (backend)\n\nWhy REST?\n- Lightweight\n- Scalable\n- Easy to integrate\n\nUnderstanding REST APIs is essential for any developer.",
+    "tags": ["API", "REST", "Backend", "HTTP", "Web Development"]
+  },
+  {
+    "title": "How Firebase Works and Why Developers Use It",
+    "category": "Mobile Development",
+    "read_time": "10 min",
+    "short_description": "Learn how Firebase simplifies backend development with real-time database, authentication, and hosting.",
+    "full_content": "Firebase is a Backend-as-a-Service (BaaS) platform by Google that helps developers build apps faster.\n\nCore Features:\n- Realtime Database\n- Firestore\n- Authentication\n- Hosting\n- Cloud Functions\n\nStep 1: Create Firebase Project\nGo to Firebase console and create a project.\n\nStep 2: Add App\nConnect your Android/Web app with Firebase.\n\nStep 3: Authentication\nEnable login using Email, Google, or Phone.\n\nStep 4: Database\nStore and sync data in real-time.\n\nStep 5: Hosting\nDeploy your web app easily.\n\nReal-world use:\nChat apps, login systems, real-time dashboards.\n\nWhy Firebase?\n- No backend setup needed\n- Real-time sync\n- Easy integration\n\nFirebase is ideal for beginners and rapid development.",
+    "tags": ["Firebase", "Backend", "Android", "Realtime Database", "Authentication"]
+  },
+  {
+    "title": "What is JWT Authentication and How It Works",
+    "category": "Security",
+    "read_time": "7 min",
+    "short_description": "Understand JSON Web Tokens (JWT) and how they are used for secure authentication in modern apps.",
+    "full_content": "JWT (JSON Web Token) is a secure way to transmit information between client and server.\n\nStructure:\nHeader.Payload.Signature\n\nHow it works:\n1. User logs in\n2. Server generates token\n3. Token is sent to client\n4. Client stores token (localStorage)\n5. Token is sent with every request\n\nAdvantages:\n- Stateless authentication\n- Secure\n- Scalable\n\nReal-world example:\nLogin systems, protected routes, APIs.\n\nImplementation:\nUse libraries like jsonwebtoken in Node.js.\n\nJWT is widely used in modern web applications for authentication.",
+    "tags": ["JWT", "Authentication", "Security", "Node.js", "API"]
+  },
+  {
+    "title": "Top 10 Git Commands Every Developer Must Know",
+    "category": "Tools",
+    "read_time": "6 min",
+    "short_description": "Master essential Git commands that every developer should use in daily development workflow.",
+    "full_content": "Git is a version control system used to track code changes.\n\nImportant commands:\n1. git init - Initialize repository\n2. git clone - Copy repo\n3. git add - Stage changes\n4. git commit - Save changes\n5. git push - Upload code\n6. git pull - Fetch updates\n7. git branch - Create branch\n8. git checkout - Switch branch\n9. git merge - Merge branches\n10. git status - Check status\n\nReal-world use:\nTeam collaboration, version tracking, code backup.\n\nWhy Git?\n- Distributed system\n- Collaboration friendly\n- Industry standard\n\nGit is a must-have skill for every developer.",
+    "tags": ["Git", "Version Control", "Developer Tools", "GitHub"]
+  }
+]
