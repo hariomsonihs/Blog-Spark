@@ -1,0 +1,122 @@
+[
+  {
+    "title": "MDN Web Docs",
+    "type": "Website",
+    "category": "Web Development",
+    "url": "https://developer.mozilla.org/",
+    "description": "MDN Web Docs is one of the most trusted resources for learning HTML, CSS, JavaScript, and web APIs. It provides detailed explanations, examples, and browser compatibility information.",
+    "tags": ["HTML", "CSS", "JavaScript", "Documentation"]
+  },
+  {
+    "title": "freeCodeCamp",
+    "type": "Course",
+    "category": "Programming",
+    "url": "https://www.freecodecamp.org/",
+    "description": "A free platform offering full coding courses in web development, data science, and machine learning with hands-on projects and certifications.",
+    "tags": ["Free Courses", "Web Development", "JavaScript", "Python"]
+  },
+  {
+    "title": "GitHub",
+    "type": "Tool",
+    "category": "Version Control",
+    "url": "https://github.com/",
+    "description": "GitHub is a platform for hosting, sharing, and collaborating on code using Git. It is widely used for version control and open-source contributions.",
+    "tags": ["Git", "Version Control", "Collaboration"]
+  },
+  {
+    "title": "Visual Studio Code",
+    "type": "Tool",
+    "category": "Development Tools",
+    "url": "https://code.visualstudio.com/",
+    "description": "A lightweight yet powerful code editor by Microsoft with support for multiple programming languages, extensions, and debugging tools.",
+    "tags": ["Editor", "VS Code", "Development"]
+  },
+  {
+    "title": "Postman",
+    "type": "Tool",
+    "category": "API Testing",
+    "url": "https://www.postman.com/",
+    "description": "Postman is a popular tool for testing APIs, sending HTTP requests, and debugging backend services efficiently.",
+    "tags": ["API", "Testing", "Backend"]
+  },
+  {
+    "title": "W3Schools",
+    "type": "Website",
+    "category": "Web Development",
+    "url": "https://www.w3schools.com/",
+    "description": "A beginner-friendly platform to learn web technologies like HTML, CSS, JavaScript with interactive examples and exercises.",
+    "tags": ["HTML", "CSS", "JavaScript", "Beginner"]
+  },
+  {
+    "title": "GeeksforGeeks",
+    "type": "Website",
+    "category": "Computer Science",
+    "url": "https://www.geeksforgeeks.org/",
+    "description": "A comprehensive platform for data structures, algorithms, interview preparation, and computer science concepts with coding examples.",
+    "tags": ["DSA", "Algorithms", "Interview Prep"]
+  },
+  {
+    "title": "Figma",
+    "type": "Tool",
+    "category": "UI/UX Design",
+    "url": "https://www.figma.com/",
+    "description": "Figma is a collaborative design tool used for UI/UX design, prototyping, and wireframing with real-time team collaboration.",
+    "tags": ["Design", "UI", "UX", "Prototyping"]
+  },
+  {
+    "title": "Canva",
+    "type": "Tool",
+    "category": "Design",
+    "url": "https://www.canva.com/",
+    "description": "An easy-to-use design tool for creating graphics, presentations, and social media content with ready-made templates.",
+    "tags": ["Graphics", "Design", "Templates"]
+  },
+  {
+    "title": "CS50 by Harvard",
+    "type": "Course",
+    "category": "Computer Science",
+    "url": "https://cs50.harvard.edu/",
+    "description": "One of the best introductory computer science courses covering C, Python, algorithms, and problem-solving with real-world applications.",
+    "tags": ["CS50", "Harvard", "Programming", "C", "Python"]
+  },
+  {
+    "title": "Coursera",
+    "type": "Course",
+    "category": "Online Learning",
+    "url": "https://www.coursera.org/",
+    "description": "An online learning platform offering courses from top universities and companies in technology, business, and more.",
+    "tags": ["Courses", "Certificates", "Online Learning"]
+  },
+  {
+    "title": "Udemy",
+    "type": "Course",
+    "category": "Online Learning",
+    "url": "https://www.udemy.com/",
+    "description": "A platform with a wide range of paid and free courses on programming, design, and personal development.",
+    "tags": ["Courses", "Programming", "Skills"]
+  },
+  {
+    "title": "Stack Overflow",
+    "type": "Website",
+    "category": "Developer Community",
+    "url": "https://stackoverflow.com/",
+    "description": "A question-and-answer platform where developers solve coding problems and share knowledge.",
+    "tags": ["Community", "Debugging", "Q&A"]
+  },
+  {
+    "title": "LeetCode",
+    "type": "Website",
+    "category": "Coding Practice",
+    "url": "https://leetcode.com/",
+    "description": "A platform for practicing coding problems, preparing for technical interviews, and improving problem-solving skills.",
+    "tags": ["DSA", "Coding", "Interviews"]
+  },
+  {
+    "title": "HackerRank",
+    "type": "Website",
+    "category": "Coding Practice",
+    "url": "https://www.hackerrank.com/",
+    "description": "Provides coding challenges and skill assessments for developers in various domains like algorithms, SQL, and AI.",
+    "tags": ["Coding", "Practice", "Skills"]
+  }
+]
