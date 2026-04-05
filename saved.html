@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlogSpark | Saved</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body data-page="saved">
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+    <div class="bg-orb orb-c"></div>
+
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="side-drawer" id="sideDrawer">
+      <div class="drawer-top">
+        <div class="brand"><span class="brand-dot"></span><div><strong>BlogSpark</strong><small>Content Hub</small></div></div>
+        <button class="icon-btn" id="closeDrawer" aria-label="Close menu">
+          <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="drawer-section-label">Navigation</div>
+      <nav class="drawer-nav">
+        <a href="index.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21H3z"/></svg>Home</a>
+        <a href="articles.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Articles</a>
+        <a href="tips.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><path d="M12 3a7 7 0 0 0-4 12.8V19h8v-3.2A7 7 0 0 0 12 3z"/><line x1="9" y1="21" x2="15" y2="21"/></svg>Tips &amp; Tricks</a>
+        <a href="facts.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Facts</a>
+        <a href="projects.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Projects</a>
+        <a href="resources.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Resources</a>
+        <a href="saved.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>Saved</a>
+      </nav>
+      <div class="drawer-footer">
+        <div class="drawer-footer-label">Find me on</div>
+        <div class="drawer-socials">
+          <a href="https://instagram.com/hariomsonihs" target="_blank" rel="noopener" class="drawer-social-btn insta" title="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://linkedin.com/in/hariomsonihs" target="_blank" rel="noopener" class="drawer-social-btn linkedin" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://github.com/hariomsonihs" target="_blank" rel="noopener" class="drawer-social-btn github" title="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+        </div>
+      </div>
+      <div class="drawer-credit">Designed &amp; built by<br/><span>Hariom Soni</span></div>
+    </aside>
+
+    <header class="topbar">
+      <a class="brand" href="index.html"><span class="brand-dot"></span><div><strong>BlogSpark</strong><small>Saved</small></div></a>
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="articles.html" class="nav-link">Articles</a>
+        <a href="tips.html" class="nav-link">Tips</a>
+        <a href="facts.html" class="nav-link">Facts</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="saved.html" class="nav-link">🔖 Saved</a>
+      </nav>
+      <button class="icon-btn menu-btn" id="openDrawer" aria-label="Open menu">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+      </button>
+    </header>
+
+    <main class="app-shell">
+      <section class="page-head reveal">
+        <h1>🔖 Saved &amp; History</h1>
+        <p>Tumhare saved items aur reading history yahan dikhegi.</p>
+        <div class="stats-row" id="historyStats" style="margin-top:1rem;cursor:pointer"></div>
+      </section>
+
+      <section class="section reveal" id="historySection" style="display:none">
+        <div class="section-head">
+          <h2 id="historySectionTitle">Reading History</h2>
+          <div style="display:flex;gap:.5rem">
+            <button class="small-btn small-btn-ghost" id="clearHistoryBtn">Clear History</button>
+            <button class="small-btn small-btn-ghost" id="closeHistoryBtn">✕ Close</button>
+          </div>
+        </div>
+        <div id="historyGrid" class="grid"></div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <h2>Your Bookmarks</h2>
+          <button class="small-btn small-btn-ghost" id="clearAllBtn">Clear All</button>
+        </div>
+        <div id="savedGrid" class="grid"></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="index.html" class="js-nav-link"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21H3z" /></svg><span>Home</span></a>
+      <a href="articles.html" class="js-nav-link"><svg viewBox="0 0 24 24"><path d="M5 5h14v14H5zM8 9h8M8 12h8M8 15h5" /></svg><span>Articles</span></a>
+      <a href="tips.html" class="js-nav-link"><svg viewBox="0 0 24 24"><path d="M12 3a7 7 0 0 0-4 12.8V19h8v-3.2A7 7 0 0 0 12 3zM9 21h6" /></svg><span>Tips</span></a>
+      <a href="projects.html" class="js-nav-link"><svg viewBox="0 0 24 24"><path d="M4 7h16v10H4zM9 7V5h6v2" /></svg><span>Projects</span></a>
+      <a href="saved.html" class="js-nav-link"><svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" /></svg><span>Saved</span></a>
+    </nav>
+
+    <script type="module">
+      import { initShellNavigation, initRevealAnimations } from "./ui.js";
+      initShellNavigation();
+      initRevealAnimations();
+
+      const BKEY = "bs_bookmarks";
+      const HKEY = "bs_history";
+      const grid = document.getElementById("savedGrid");
+      const historySection = document.getElementById("historySection");
+      const historyGrid = document.getElementById("historyGrid");
+      const historySectionTitle = document.getElementById("historySectionTitle");
+
+      function getBookmarks() { try { return JSON.parse(localStorage.getItem(BKEY) || "[]"); } catch { return []; } }
+      function getHistory() { try { return JSON.parse(localStorage.getItem(HKEY) || "[]"); } catch { return []; } }
+
+      const typeIcon  = { articles:"📄", tips:"💡", facts:"🔍", projects:"🚀", resources:"🔗" };
+      const typeLabel = { articles:"Articles", tips:"Tips", facts:"Facts", projects:"Projects", resources:"Resources" };
+      const typeColor = { articles:"var(--brand-2)", tips:"var(--brand-1)", facts:"var(--warn)", projects:"#8b5cf6", resources:"#06b6d4" };
+
+      let activeType = null;
+
+      // ── Stats chips ──────────────────────────────────────────────────────────
+      function renderStats() {
+        const hist = getHistory();
+        const statsRow = document.getElementById("historyStats");
+        const types = ["articles", "tips", "facts", "projects", "resources"];
+        statsRow.innerHTML = types.map(t => {
+          const count = hist.filter(h => h.type === t).length;
+          const isActive = activeType === t;
+          return `<div class="stat-chip history-chip${isActive ? " active" : ""}" data-type="${t}" style="cursor:pointer;${isActive ? `background:${typeColor[t]};color:#fff;border-color:transparent;` : ""}"
+            title="${typeLabel[t]} reading history dekho">
+            <span style="font-size:1rem">${typeIcon[t]}</span>
+            <span style="font-weight:700;${isActive ? "color:#fff" : ""}">${count}</span>
+            <span style="font-size:.78rem;${isActive ? "color:rgba(255,255,255,.85)" : "color:var(--muted)"}"> ${typeLabel[t]} Read</span>
+          </div>`;
+        }).join("");
+
+        statsRow.querySelectorAll(".history-chip").forEach(chip => {
+          chip.addEventListener("click", () => {
+            const t = chip.dataset.type;
+            if (activeType === t) {
+              // Same chip dobara click → close
+              activeType = null;
+              historySection.style.display = "none";
+            } else {
+              activeType = t;
+              showHistory(t);
+            }
+            renderStats();
+          });
+        });
+      }
+
+      // ── History panel ────────────────────────────────────────────────────────
+      function showHistory(type) {
+        const hist = getHistory().filter(h => h.type === type);
+        historySectionTitle.textContent = `${typeIcon[type]} ${typeLabel[type]} Reading History`;
+        historySection.style.display = "block";
+        historySection.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        if (!hist.length) {
+          historyGrid.innerHTML = `<div class="state-box" style="grid-column:1/-1">Abhi tak koi ${typeLabel[type]} nahi padha.</div>`;
+          return;
+        }
+        historyGrid.innerHTML = hist.map(h => `
+          <a class="content-card" href="read.html?type=${h.type}&id=${h.id}">
+            <div class="card-top" style="padding:.85rem 1rem">
+              <div class="badge-row">
+                <span class="badge">${typeIcon[h.type]} ${typeLabel[h.type]}</span>
+                ${h.category ? `<span class="badge badge-muted">${h.category}</span>` : ""}
+              </div>
+              <h3>${h.title || "Untitled"}</h3>
+              <p class="card-desc" style="font-size:.8rem;color:var(--muted)">Read on ${new Date(h.readAt).toLocaleDateString("en-IN",{day:"2-digit",month:"short",year:"numeric"})}</p>
+            </div>
+            <div class="card-bottom"><div class="card-actions"><span class="small-btn">Read again →</span></div></div>
+          </a>`).join("");
+      }
+
+      document.getElementById("closeHistoryBtn").addEventListener("click", () => {
+        activeType = null;
+        historySection.style.display = "none";
+        renderStats();
+      });
+
+      document.getElementById("clearHistoryBtn").addEventListener("click", () => {
+        if (!activeType) return;
+        if (!confirm(`${typeLabel[activeType]} history clear karein?`)) return;
+        const hist = getHistory().filter(h => h.type !== activeType);
+        localStorage.setItem(HKEY, JSON.stringify(hist));
+        historySection.style.display = "none";
+        activeType = null;
+        renderStats();
+      });
+
+      // ── Bookmarks ────────────────────────────────────────────────────────────
+      function render() {
+        const bms = getBookmarks();
+        if (!bms.length) {
+          grid.innerHTML = `<div class="state-box" style="grid-column:1/-1">
+            <p>Koi saved item nahi hai. Articles/Tips/Facts padhte waqt 🔖 Save button dabao.</p>
+            <a href="articles.html" class="small-btn" style="margin-top:.8rem;display:inline-flex">Browse Articles →</a>
+          </div>`;
+          return;
+        }
+        grid.innerHTML = bms.slice().reverse().map(b => `
+          <a class="content-card" href="read.html?type=${b.type}&id=${b.id}">
+            <div class="card-top" style="padding:.85rem 1rem">
+              <div class="badge-row">
+                <span class="badge">${typeIcon[b.type] || "📌"} ${b.type.charAt(0).toUpperCase()+b.type.slice(1)}</span>
+              </div>
+              <h3>${b.title || "Saved Item"}</h3>
+              <p class="card-desc" style="font-size:.8rem;color:var(--muted)">Saved ${new Date(b.savedAt).toLocaleDateString("en-IN",{day:"2-digit",month:"short",year:"numeric"})}</p>
+            </div>
+            <div class="card-bottom">
+              <div class="card-actions">
+                <span class="small-btn">Read →</span>
+                <span class="small-btn small-btn-ghost" onclick="event.preventDefault();removeBm('${b.id}','${b.type}')">Remove</span>
+              </div>
+            </div>
+          </a>`).join("");
+      }
+
+      window.removeBm = function(id, type) {
+        const bms = getBookmarks().filter(b => !(b.id === id && b.type === type));
+        localStorage.setItem(BKEY, JSON.stringify(bms));
+        render();
+      };
+
+      document.getElementById("clearAllBtn").addEventListener("click", () => {
+        if (confirm("Saare saved items remove karein?")) { localStorage.removeItem(BKEY); render(); }
+      });
+
+      renderStats();
+      render();
+    </script>
+  </body>
+</html>

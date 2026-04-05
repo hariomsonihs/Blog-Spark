@@ -4,11 +4,94 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BlogSpark | Home</title>
-    <meta name="description" content="BlogSpark multi-page learning platform with realtime Firebase content updates." />
+    <meta name="description" content="BlogSpark — your personal learning hub for articles, tips, projects with source code, facts, and curated resources." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="app.css" />
+    <style>
+      /* ── Hero Mesh ── */
+      .hero { position: relative; overflow: hidden; }
+      .hero-mesh {
+        position: absolute; inset: 0; z-index: 0; pointer-events: none;
+        background:
+          radial-gradient(ellipse at 10% 50%, rgba(95,142,255,.18) 0%, transparent 55%),
+          radial-gradient(ellipse at 90% 20%, rgba(60,200,167,.15) 0%, transparent 50%),
+          radial-gradient(ellipse at 60% 90%, rgba(255,111,179,.12) 0%, transparent 45%);
+        animation: meshPulse 6s ease-in-out infinite alternate;
+      }
+      @keyframes meshPulse {
+        from { opacity: .7; }
+        to   { opacity: 1; }
+      }
+      .hero > * { position: relative; z-index: 1; }
+
+      /* Typing text */
+      .typing-text {
+        background: linear-gradient(115deg, var(--brand-2), var(--brand-1));
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        border-right: 3px solid var(--brand-2);
+        animation: blink .75s step-end infinite;
+        white-space: nowrap;
+      }
+      @keyframes blink { 50% { border-color: transparent; } }
+
+      /* ── Featured Banner ── */
+      .featured-banner {
+        margin-top: 1rem;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        background: var(--surface-strong);
+        display: none;
+      }
+      .featured-banner.show { display: block; }
+      .featured-inner {
+        display: flex; align-items: stretch; min-height: 160px;
+      }
+      .featured-accent {
+        width: 6px; flex-shrink: 0;
+        background: linear-gradient(180deg, var(--brand-2), var(--brand-1));
+      }
+      .featured-body { padding: 1.2rem 1.4rem; flex: 1; min-width: 0; }
+      .featured-eyebrow {
+        display: inline-flex; align-items: center; gap: .35rem;
+        font-size: .72rem; font-weight: 700; text-transform: uppercase;
+        letter-spacing: .07em; color: var(--brand-2);
+        background: rgba(95,142,255,.1); border-radius: 999px;
+        padding: .18rem .6rem; margin-bottom: .6rem;
+      }
+      .featured-body h2 { margin: 0 0 .4rem; font-size: clamp(1rem,2.5vw,1.35rem); line-height: 1.25; }
+      .featured-body p  { margin: 0 0 .8rem; color: var(--muted); font-size: .88rem; line-height: 1.6;
+        display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+      .featured-link {
+        display: inline-flex; align-items: center; gap: .35rem;
+        padding: .42rem .9rem; border-radius: 999px;
+        background: linear-gradient(115deg, var(--brand-2), var(--brand-1));
+        color: #fff; font-size: .82rem; font-weight: 600; text-decoration: none;
+        transition: .2s;
+      }
+      .featured-link:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(95,142,255,.3); }
+
+      /* ── Trending Section ── */
+      .trending-list { display: flex; flex-direction: column; gap: .5rem; }
+      .trending-item {
+        display: flex; align-items: center; gap: .75rem;
+        padding: .65rem .9rem;
+        background: var(--surface-strong); border: 1px solid var(--line);
+        border-radius: 14px; text-decoration: none; color: inherit;
+        transition: .2s ease;
+      }
+      .trending-item:hover { border-color: var(--brand-2); transform: translateX(4px); }
+      .trending-rank {
+        font-size: 1rem; font-weight: 800; font-family: "Space Grotesk", sans-serif;
+        color: var(--brand-2); min-width: 24px; text-align: center; flex-shrink: 0;
+      }
+      .trending-info { flex: 1; min-width: 0; }
+      .trending-title { font-size: .88rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .trending-meta  { font-size: .74rem; color: var(--muted); margin-top: .1rem; }
+      .trending-views { font-size: .78rem; color: var(--muted); flex-shrink: 0; }
+    </style>
   </head>
   <body data-page="home">
     <div class="bg-orb orb-a"></div>
@@ -18,85 +101,60 @@
     <div class="drawer-overlay" id="drawerOverlay"></div>
     <aside class="side-drawer" id="sideDrawer" aria-label="Mobile navigation drawer">
       <div class="drawer-top">
-        <div class="brand">
-          <span class="brand-dot"></span>
-          <div><strong>BlogSpark</strong><small>Content Hub</small></div>
-        </div>
+        <div class="brand"><span class="brand-dot"></span><div><strong>BlogSpark</strong><small>Content Hub</small></div></div>
         <button class="icon-btn" id="closeDrawer" aria-label="Close menu">
           <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>
       <div class="drawer-section-label">Navigation</div>
       <nav class="drawer-nav">
-        <a href="index.html" class="nav-link js-nav-link">
-          <svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21H3z"/></svg>Home
-        </a>
-        <a href="articles.html" class="nav-link js-nav-link">
-          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Articles
-        </a>
-        <a href="tips.html" class="nav-link js-nav-link">
-          <svg viewBox="0 0 24 24"><path d="M12 3a7 7 0 0 0-4 12.8V19h8v-3.2A7 7 0 0 0 12 3z"/><line x1="9" y1="21" x2="15" y2="21"/></svg>Tips &amp; Tricks
-        </a>
-        <a href="facts.html" class="nav-link js-nav-link">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Facts
-        </a>
-        <a href="projects.html" class="nav-link js-nav-link">
-          <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Projects
-        </a>
-        <a href="resources.html" class="nav-link js-nav-link">
-          <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Resources
-        </a>
+        <a href="index.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21H3z"/></svg>Home</a>
+        <a href="articles.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Articles</a>
+        <a href="tips.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><path d="M12 3a7 7 0 0 0-4 12.8V19h8v-3.2A7 7 0 0 0 12 3z"/><line x1="9" y1="21" x2="15" y2="21"/></svg>Tips &amp; Tricks</a>
+        <a href="facts.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Facts</a>
+        <a href="projects.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Projects</a>
+        <a href="resources.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Resources</a>
+        <a href="search.html" class="nav-link js-nav-link"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search</a>
+        <a href="saved.html" class="nav-link js-nav-link saved-drawer-link"><svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>🔖 Saved <span class="bm-count-badge" style="margin-left:auto;background:var(--brand-2);color:#fff;border-radius:999px;padding:.1rem .45rem;font-size:.72rem;font-weight:700;display:none"></span></a>
       </nav>
       <div class="drawer-footer">
         <div class="drawer-footer-label">Find me on</div>
         <div class="drawer-socials">
-          <a href="https://instagram.com/hariomsonihs" target="_blank" rel="noopener" class="drawer-social-btn insta" title="Instagram">
-            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="https://linkedin.com/in/hariomsonihs" target="_blank" rel="noopener" class="drawer-social-btn linkedin" title="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="https://github.com/hariomsonihs" target="_blank" rel="noopener" class="drawer-social-btn github" title="GitHub">
-            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          </a>
+          <a href="https://instagram.com/hariomsonihs" target="_blank" rel="noopener" class="drawer-social-btn insta" title="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://linkedin.com/in/hariomsonihs" target="_blank" rel="noopener" class="drawer-social-btn linkedin" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://github.com/hariomsonihs" target="_blank" rel="noopener" class="drawer-social-btn github" title="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
         </div>
       </div>
       <div class="drawer-credit">Designed &amp; built by<br/><span>Hariom Soni</span></div>
     </aside>
 
     <header class="topbar">
-      <a class="brand" href="index.html">
-        <span class="brand-dot"></span>
-        <div>
-          <strong>BlogSpark</strong>
-          <small>Learn. Build. Grow.</small>
-        </div>
-      </a>
-
+      <a class="brand" href="index.html"><span class="brand-dot"></span><div><strong>BlogSpark</strong><small>Learn. Build. Grow.</small></div></a>
       <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="articles.html" class="nav-link">Articles</a>
-        <a href="tips.html" class="nav-link">Tips</a>
-        <a href="facts.html" class="nav-link">Facts</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="index.html" class="nav-link"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21H3z"/></svg>Home</a>
+        <a href="articles.html" class="nav-link"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Articles</a>
+        <a href="tips.html" class="nav-link"><svg viewBox="0 0 24 24"><path d="M12 3a7 7 0 0 0-4 12.8V19h8v-3.2A7 7 0 0 0 12 3z"/><line x1="9" y1="21" x2="15" y2="21"/></svg>Tips</a>
+        <a href="facts.html" class="nav-link"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Facts</a>
+        <a href="projects.html" class="nav-link"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Projects</a>
+        <a href="resources.html" class="nav-link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Resources</a>
+        <a href="search.html" class="nav-link"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search</a>
       </nav>
-
       <button class="icon-btn menu-btn" id="openDrawer" aria-label="Open menu">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
       </button>
     </header>
 
     <main class="app-shell">
+
+      <!-- HERO -->
       <section class="hero reveal">
-        <p class="eyebrow">Realtime Firebase Powered Platform</p>
-        <h1>Learn, Build & Grow with live content updates.</h1>
-        <p>
-          Articles, tips and tricks, facts, projects with source code, and resources — sab alag pages par
-          Firestore se realtime load honge. Content add karte hi live app automatically update ho jayega.
-        </p>
+        <div class="hero-mesh"></div>
+        <p class="eyebrow">Your Personal Learning Hub</p>
+        <h1>Learn, Build &amp; Grow with <span class="typing-text" id="typingText"></span></h1>
+        <p>Explore in-depth articles, quick tips &amp; tricks, fascinating facts, hands-on projects with full source code, and handpicked resources — all in one place, always up to date.</p>
         <div class="cta-row">
           <a class="btn primary" href="articles.html">Explore Articles</a>
+          <a class="btn soft" href="search.html">🔍 Search All</a>
           <a class="btn soft" href="projects.html">View Projects</a>
         </div>
         <div class="stats-row">
@@ -108,6 +166,31 @@
         </div>
       </section>
 
+      <!-- FEATURED BANNER -->
+      <div class="featured-banner reveal" id="featuredBanner">
+        <div class="featured-inner">
+          <div class="featured-accent"></div>
+          <div class="featured-body">
+            <div class="featured-eyebrow">⭐ Featured</div>
+            <h2 id="featuredTitle">Loading...</h2>
+            <p id="featuredDesc"></p>
+            <a class="featured-link" id="featuredLink" href="#">Read Now →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRENDING -->
+      <section class="section reveal">
+        <div class="section-head">
+          <h2>🔥 Trending Now</h2>
+          <span class="badge badge-orange">Most Viewed</span>
+        </div>
+        <div class="trending-list" id="trendingList">
+          <div class="state-box">Loading trending content...</div>
+        </div>
+      </section>
+
+      <!-- LATEST ARTICLES -->
       <section class="section reveal">
         <div class="section-head">
           <h2>Latest Articles</h2>
@@ -119,9 +202,10 @@
         </div>
       </section>
 
+      <!-- TIPS -->
       <section class="section reveal">
         <div class="section-head">
-          <h2>Tips & Tricks</h2>
+          <h2>Tips &amp; Tricks</h2>
           <a class="small-btn" href="tips.html">View all →</a>
         </div>
         <div class="swiper-wrap">
@@ -130,6 +214,7 @@
         </div>
       </section>
 
+      <!-- FACTS -->
       <section class="section reveal">
         <div class="section-head">
           <h2>Did You Know?</h2>
@@ -141,6 +226,7 @@
         </div>
       </section>
 
+      <!-- PROJECTS -->
       <section class="section reveal">
         <div class="section-head">
           <h2>Latest Projects</h2>
@@ -157,26 +243,11 @@
     <footer class="home-credit reveal">Designed &amp; built by <span>Hariom Soni</span></footer>
 
     <nav class="bottom-nav" aria-label="Mobile quick menu">
-      <a href="index.html" class="js-nav-link">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z" /></svg>
-        <span>Home</span>
-      </a>
-      <a href="articles.html" class="js-nav-link">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM8 9h8M8 12h8M8 15h5" /></svg>
-        <span>Articles</span>
-      </a>
-      <a href="tips.html" class="js-nav-link">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a7 7 0 0 0-4 12.8V19h8v-3.2A7 7 0 0 0 12 3zM9 21h6" /></svg>
-        <span>Tips</span>
-      </a>
-      <a href="projects.html" class="js-nav-link">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v10H4zM9 7V5h6v2" /></svg>
-        <span>Projects</span>
-      </a>
-      <a href="resources.html" class="js-nav-link">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 3H5v18h14V8.5L13.5 3zM13 4.5V8h3.5M9 12h6M9 15h6M9 9h3" /></svg>
-        <span>Resources</span>
-      </a>
+      <a href="index.html" class="js-nav-link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z" /></svg><span>Home</span></a>
+      <a href="articles.html" class="js-nav-link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM8 9h8M8 12h8M8 15h5" /></svg><span>Articles</span></a>
+      <a href="search.html" class="js-nav-link"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span>Search</span></a>
+      <a href="projects.html" class="js-nav-link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v10H4zM9 7V5h6v2" /></svg><span>Projects</span></a>
+      <a href="profile.html" class="js-nav-link"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Profile</span></a>
     </nav>
 
     <script type="module" src="main.js"></script>

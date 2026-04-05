@@ -6,6 +6,7 @@ import {
   orderBy,
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 import { escapeHtml, initRevealAnimations, initShellNavigation } from "./ui.js";
+import { initNotifications } from "./notifications.js";
 
 const main = document.querySelector("main[data-collection]");
 if (!main) {
@@ -78,6 +79,7 @@ function cardForArticles(item) {
         <div class="badge-row">
           <span class="badge">${escapeHtml(item.category || "Article")}</span>
           ${item.readTime ? `<span class="badge badge-muted">⏱ ${escapeHtml(item.readTime)}</span>` : ""}
+          ${item.views ? `<span class="badge badge-muted">👁 ${item.views}</span>` : ""}
         </div>
         <h3>${escapeHtml(item.title || "Untitled")}</h3>
         <p class="card-desc">${escapeHtml(preview(item.description || item.content || ""))}</p>
@@ -117,21 +119,23 @@ function cardForTips(item) {
 }
 
 function cardForFacts(item) {
+  const cat = item.category ? `<span class="badge">${escapeHtml(item.category)}</span>` : "";
+  const src = item.source
+    ? `<span class="small-btn small-btn-ghost" data-src="${escapeHtml(item.source)}">Source ↗</span>`
+    : "";
   return `
-    <a class="content-card" href="read.html?type=facts&id=${item.id}">
+    <a class="content-card fact-card" href="read.html?type=facts&id=${item.id}">
       ${banner("banner-fact", "🔍")}
       <div class="card-top">
         <div class="badge-row">
-          <span class="badge badge-orange">Fact</span>
-          ${item.category ? `<span class="badge">${escapeHtml(item.category)}</span>` : ""}
+          <span class="badge badge-orange">Fact</span>${cat}
         </div>
         <h3>${escapeHtml(item.title || "Fact")}</h3>
         <p class="card-desc">${escapeHtml(preview(item.body || ""))}</p>
       </div>
       <div class="card-bottom">
         <div class="card-actions">
-          <span class="small-btn">Read more →</span>
-          ${item.source ? `<a class="small-btn small-btn-ghost" href="${escapeHtml(item.source)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Source ↗</a>` : ""}
+          <span class="small-btn">Read more →</span>${src}
         </div>
       </div>
     </a>
@@ -140,6 +144,8 @@ function cardForFacts(item) {
 
 function cardForProjects(item) {
   const fileCount = item.codeFiles?.length || (item.code ? 1 : 0);
+  const live = item.liveUrl ? `<span class="small-btn small-btn-ghost" data-src="${escapeHtml(item.liveUrl)}">Live ↗</span>` : "";
+  const repo = item.repoUrl ? `<span class="small-btn small-btn-ghost" data-src="${escapeHtml(item.repoUrl)}">GitHub ↗</span>` : "";
   return `
     <a class="content-card" href="read.html?type=projects&id=${item.id}">
       ${banner("banner-project", "🚀", item.imageUrl)}
@@ -155,9 +161,7 @@ function cardForProjects(item) {
       </div>
       <div class="card-bottom">
         <div class="card-actions">
-          <span class="small-btn">View & Code →</span>
-          ${item.liveUrl ? `<a class="small-btn small-btn-ghost" href="${escapeHtml(item.liveUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Live ↗</a>` : ""}
-          ${item.repoUrl ? `<a class="small-btn small-btn-ghost" href="${escapeHtml(item.repoUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">GitHub ↗</a>` : ""}
+          <span class="small-btn">View &amp; Code →</span>${live}${repo}
         </div>
       </div>
     </a>
@@ -204,6 +208,9 @@ function renderCard(item) {
   }
 }
 
+const PAGE_SIZE = 9;
+let page = 1;
+
 function getFilteredDocs() {
   const queryText = (searchInput?.value || "").trim().toLowerCase();
   const sortBy = sortSelect?.value || "newest";
@@ -214,22 +221,35 @@ function getFilteredDocs() {
     return matchSearch && matchCat;
   });
 
-  if (sortBy === "oldest") {
-    docs = [...docs].reverse();
-  }
-
+  if (sortBy === "oldest") docs = [...docs].reverse();
   return docs;
 }
 
 function render() {
   const docs = getFilteredDocs();
-
   if (!docs.length) {
     renderState(searchInput?.value ? "No matching result found." : "No content yet. Add from admin panel.");
+    document.getElementById("loadMoreWrap")?.remove();
     return;
   }
 
-  grid.innerHTML = docs.map((doc) => renderCard(doc)).join("");
+  const visible = docs.slice(0, page * PAGE_SIZE);
+  grid.innerHTML = visible.map((doc) => renderCard(doc)).join("");
+
+  // Load More button
+  let wrap = document.getElementById("loadMoreWrap");
+  if (visible.length < docs.length) {
+    if (!wrap) {
+      wrap = document.createElement("div");
+      wrap.id = "loadMoreWrap";
+      wrap.style.cssText = "text-align:center;margin-top:1.2rem";
+      wrap.innerHTML = `<button class="btn soft" id="loadMoreBtn">Load More</button>`;
+      grid.parentElement.appendChild(wrap);
+      document.getElementById("loadMoreBtn").addEventListener("click", () => { page++; render(); });
+    }
+  } else {
+    wrap?.remove();
+  }
 }
 
 function bindCodeModal() {
@@ -262,8 +282,13 @@ function bindCodeModal() {
   });
 }
 
-searchInput?.addEventListener("input", render);
-sortSelect?.addEventListener("change", render);
+searchInput?.addEventListener("input", () => { page = 1; render(); });
+sortSelect?.addEventListener("change", () => { page = 1; render(); });
+
+grid.addEventListener("click", e => {
+  const src = e.target.closest("[data-src]");
+  if (src) { e.preventDefault(); e.stopPropagation(); window.open(src.dataset.src, "_blank", "noopener"); }
+});
 
 const liveQuery = query(collection(db, collectionName), orderBy("createdAt", "desc"));
 onSnapshot(
@@ -288,3 +313,11 @@ onSnapshot(
 bindCodeModal();
 initShellNavigation();
 initRevealAnimations();
+initNotifications();
+
+// Back to Top
+const btt = document.createElement("button");
+btt.id = "backToTop"; btt.textContent = "↑"; btt.title = "Back to top";
+document.body.appendChild(btt);
+window.addEventListener("scroll", () => btt.classList.toggle("show", window.scrollY > 300));
+btt.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
