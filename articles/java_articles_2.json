@@ -1,0 +1,426 @@
+[
+  {
+    "title": "Getting Started with Java: Complete Installation Guide and First Program",
+    "category": "Java Programming",
+    "read_time": "15 min",
+    "short_description": "A professional, step-by-step guide to installing JDK, setting up IDE, and writing your first Java program with best practices.",
+    "full_content": "Java remains one of the most robust and widely used programming languages for enterprise applications, Android development, and cloud-native systems. This comprehensive tutorial walks you through professional setup and your first program.\n\nStep 1: Download and Install JDK\nVisit the official Adoptium or Oracle website and download JDK 21 (LTS). Choose the installer for your OS (Windows, macOS, Linux). Run the installer and verify installation by opening a terminal/command prompt and typing 'java -version'.\n\nStep 2: Set Environment Variables\nOn Windows: Add JAVA_HOME and update PATH. On macOS/Linux: Export JAVA_HOME in ~/.zshrc or ~/.bashrc.\n\nStep 3: Choose and Install an IDE\nInstall IntelliJ IDEA Community Edition or Eclipse. These provide professional features like code completion, debugging, and refactoring.\n\nStep 4: Create Your First Project\nIn IntelliJ: File > New > Project > Java. Name it 'HelloJava'. Enable 'Create Git repository' for professional version control.\n\nStep 5: Write the Hello World Program\nCreate a class named HelloWorld.java with the following code:\n\npublic class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, Java World! Welcome to professional Java development.\");\n    }\n}\n\nStep 6: Compile and Run\nUse the IDE's Run button or command line: javac HelloWorld.java && java HelloWorld.\n\nStep 7: Best Practices\nAlways use meaningful class names, follow camelCase, add Javadoc comments, and use Git for version control.\n\nThis foundation prepares you for building scalable enterprise applications.",
+    "tags": ["Java", "Beginner", "JDK", "Installation", "Hello World"]
+  },
+  {
+    "title": "Mastering Variables and Data Types in Java: Professional Guide",
+    "category": "Java Programming",
+    "read_time": "12 min",
+    "short_description": "Deep dive into primitive and reference data types, type conversion, and professional variable declaration practices.",
+    "full_content": "Variables are the building blocks of any Java program. Understanding data types ensures memory efficiency and prevents runtime errors in production systems.\n\nStep 1: Primitive Data Types\nJava provides eight primitives: byte, short, int, long, float, double, char, boolean. Example: int age = 25; long salary = 75000L;\n\nStep 2: Reference Data Types\nStrings, arrays, and objects are references. String name = \"Hariom\"; – note that String is immutable.\n\nStep 3: Variable Declaration and Naming Conventions\nUse camelCase for variables, UPPER_SNAKE_CASE for constants. Always initialize variables before use.\n\nStep 4: Type Casting and Conversion\nImplicit widening (int to long) and explicit narrowing (double to int). Example: double pi = 3.14; int roundedPi = (int) pi;\n\nStep 5: Wrapper Classes and Autoboxing\nInteger, Double, etc., for object representation. Autoboxing happens automatically: Integer num = 100;\n\nStep 6: Professional Tips\nUse final for constants, prefer long over int for large numbers, and avoid magic numbers by using named constants.\n\nReal-world use: Financial systems rely on BigDecimal (not double) for precision.",
+    "tags": ["Java", "Data Types", "Variables", "Primitives", "Core Java"]
+  },
+  {
+    "title": "Control Flow Statements in Java: If, Switch, Loops Explained Professionally",
+    "category": "Java Programming",
+    "read_time": "18 min",
+    "short_description": "Comprehensive guide to decision-making and looping constructs with real-world examples and best practices.",
+    "full_content": "Control flow determines the execution path of your program. Mastering these constructs is essential for writing clean, maintainable enterprise code.\n\nStep 1: If-Else and Else-If Ladder\nif (condition) { } else if () { } else { }. Always use braces for single statements in professional code.\n\nStep 2: Switch Statement (Enhanced in Java 14+)\nswitch (day) { case \"MONDAY\" -> System.out.println(\"Start of week\"); }\n\nStep 3: For Loop and Enhanced For Loop\nfor (int i = 0; i < 10; i++) { } and for (String item : list) { } – preferred for collections.\n\nStep 4: While and Do-While Loops\nUse while when the number of iterations is unknown; do-while ensures at least one execution.\n\nStep 5: Break, Continue, and Return\nBreak exits the loop; continue skips to next iteration.\n\nStep 6: Professional Patterns\nAvoid deep nesting (use early returns), prefer switch expressions in modern Java, and combine with Streams for cleaner code.\n\nExample: Processing user roles in an authentication system using switch expressions.",
+    "tags": ["Java", "Control Flow", "Loops", "If-Else", "Core Java"]
+  },
+  {
+    "title": "Methods in Java: Parameters, Overloading, and Best Practices",
+    "category": "Java Programming",
+    "read_time": "14 min",
+    "short_description": "Learn to create reusable, clean methods with varargs, method overloading, and professional documentation standards.",
+    "full_content": "Methods encapsulate logic and promote code reusability – a cornerstone of professional Java development.\n\nStep 1: Method Declaration and Signature\npublic static returnType methodName(parameters) { }\n\nStep 2: Parameter Passing (Pass-by-Value)\nPrimitives are copied; objects pass references.\n\nStep 3: Method Overloading\nSame name, different parameters. Example: calculateArea(int side) and calculateArea(int length, int width).\n\nStep 4: Varargs (Variable Arguments)\npublic void printItems(String... items) { } – useful for flexible APIs.\n\nStep 5: Recursion vs Iteration\nUse recursion only when the problem is naturally recursive (e.g., tree traversal) with proper base case to avoid StackOverflow.\n\nStep 6: Javadoc and Clean Code\nAlways write Javadoc: /** @param ... @return ... */. Keep methods under 20 lines; follow Single Responsibility Principle.\n\nReal-world: Utility methods in Spring Boot services follow these exact patterns.",
+    "tags": ["Java", "Methods", "Overloading", "Varargs", "OOP"]
+  },
+  {
+    "title": "Arrays and Multi-Dimensional Arrays in Java: Professional Usage",
+    "category": "Java Programming",
+    "read_time": "13 min",
+    "short_description": "Complete guide to single and multi-dimensional arrays, array manipulation, and when to use collections instead.",
+    "full_content": "Arrays provide fixed-size, high-performance data storage but have limitations that professionals must understand.\n\nStep 1: Declaring and Initializing Arrays\nint[] numbers = new int[5]; or int[] numbers = {1,2,3};\n\nStep 2: Accessing and Modifying Elements\nUse zero-based indexing. Loop with for or enhanced for.\n\nStep 3: Multi-Dimensional Arrays\nint[][] matrix = new int[3][3]; – useful for matrices or grids.\n\nStep 4: Common Operations\nCopy with System.arraycopy(), sort with Arrays.sort(), search with Arrays.binarySearch().\n\nStep 5: Limitations and Best Practices\nArrays are fixed size. For dynamic needs, prefer ArrayList. Always check bounds to prevent ArrayIndexOutOfBoundsException.\n\nStep 6: Real-World Example\nStoring exam scores in a 2D array for student performance analytics in an education platform.",
+    "tags": ["Java", "Arrays", "Multi-Dimensional", "Core Java"]
+  },
+  {
+    "title": "String Handling in Java: Immutability, Methods, and Performance",
+    "category": "Java Programming",
+    "read_time": "16 min",
+    "short_description": "Master String, StringBuilder, StringBuffer, and modern string operations with professional optimization tips.",
+    "full_content": "Strings are immutable in Java, which ensures thread-safety but requires understanding of memory implications.\n\nStep 1: String Creation and Immutability\nString s1 = \"Java\"; String s2 = new String(\"Java\"); – pool vs heap.\n\nStep 2: Important String Methods\nlength(), charAt(), substring(), indexOf(), replace(), split(), toUpperCase(), trim().\n\nStep 3: StringBuilder vs StringBuffer\nStringBuilder for single-threaded (faster), StringBuffer for multi-threaded (synchronized).\n\nStep 4: String Concatenation Best Practices\nUse + in simple cases; prefer StringBuilder in loops to avoid creating multiple objects.\n\nStep 5: String Formatting and Modern API\nString.format(), String.join(), and Java 21's String templates (preview).\n\nStep 6: Performance Tips\nUse intern() judiciously, prefer text blocks (Java 13+) for multi-line strings.\n\nReal-world: Building dynamic SQL queries or JSON responses in Spring Boot services.",
+    "tags": ["Java", "String", "StringBuilder", "Performance"]
+  },
+  {
+    "title": "Object-Oriented Programming in Java: Classes and Objects Deep Dive",
+    "category": "Java Programming",
+    "read_time": "20 min",
+    "short_description": "Professional explanation of classes, objects, constructors, this and super keywords with enterprise examples.",
+    "full_content": "OOP is the foundation of Java. This guide teaches you to design clean, maintainable classes used in real production systems.\n\nStep 1: Class Declaration and Members\npublic class Employee { private String name; ... }\n\nStep 2: Constructors and Overloading\nDefault, parameterized, copy constructor. Use this() for constructor chaining.\n\nStep 3: Object Creation and Garbage Collection\nnew Employee() creates object on heap; GC handles cleanup.\n\nStep 4: this and super Keywords\nthis refers to current object; super calls parent constructor/method.\n\nStep 5: Access Modifiers and Encapsulation\nprivate fields with public getters/setters – follow JavaBean standards.\n\nStep 6: Real-World Example\nDesigning a UserService class following SOLID principles for a banking application.",
+    "tags": ["Java", "OOP", "Classes", "Objects", "Encapsulation"]
+  },
+  {
+    "title": "Inheritance in Java: Types, super Keyword, and Best Practices",
+    "category": "Java Programming",
+    "read_time": "15 min",
+    "short_description": "Learn single, multilevel, hierarchical inheritance with proper use of extends and composition over inheritance principle.",
+    "full_content": "Inheritance promotes code reuse but must be used judiciously to avoid tight coupling.\n\nStep 1: Single Inheritance\nclass Manager extends Employee { }\n\nStep 2: Multilevel and Hierarchical Inheritance\nSupported; multiple inheritance via interfaces only.\n\nStep 3: super Keyword Usage\nCall parent constructor or overridden method.\n\nStep 4: Method Overriding and @Override Annotation\nAlways annotate to catch errors at compile time.\n\nStep 5: Final Classes and Methods\nPrevent inheritance/overriding for security (e.g., String class).\n\nStep 6: Composition Over Inheritance\nPrefer 'has-a' relationship for flexibility in modern designs (e.g., Spring components).\n\nReal-world: Employee hierarchy in HR management systems.",
+    "tags": ["Java", "Inheritance", "OOP", "Core Java"]
+  },
+  {
+    "title": "Polymorphism in Java: Runtime and Compile-Time with Examples",
+    "category": "Java Programming",
+    "read_time": "14 min",
+    "short_description": "Master method overloading, overriding, and dynamic method dispatch with professional code examples.",
+    "full_content": "Polymorphism allows one interface, multiple implementations – key to flexible and extensible systems.\n\nStep 1: Compile-Time Polymorphism (Overloading)\nMultiple methods with same name, different signatures.\n\nStep 2: Runtime Polymorphism (Overriding)\nParent reference can call child implementation.\n\nStep 3: Dynamic Method Dispatch\nJVM decides method at runtime based on object type.\n\nStep 4: Using Interfaces for Polymorphism\nList<String> list = new ArrayList<>(); – most professional pattern.\n\nStep 5: Covariant Return Types and Final Methods\nAdvanced overriding rules.\n\nStep 6: Real-World Use\nPaymentProcessor interface with CreditCardPayment and UPIPayment implementations in e-commerce platforms.",
+    "tags": ["Java", "Polymorphism", "OOP", "Overriding"]
+  },
+  {
+    "title": "Abstraction and Interfaces in Java: Complete Professional Guide",
+    "category": "Java Programming",
+    "read_time": "17 min",
+    "short_description": "Deep understanding of abstract classes vs interfaces, default methods, and functional interfaces.",
+    "full_content": "Abstraction hides complexity and exposes only necessary features.\n\nStep 1: Abstract Classes\nCannot be instantiated; can have abstract and concrete methods.\n\nStep 2: Interfaces (Java 8+)\nCan have default, static, and private methods. Supports multiple inheritance.\n\nStep 3: Functional Interfaces and @FunctionalInterface\nSingle abstract method – foundation for lambdas.\n\nStep 4: When to Use Abstract Class vs Interface\nUse abstract for 'is-a' with shared code; interface for contracts.\n\nStep 5: Sealed Classes (Java 17+)\nRestrict inheritance for better domain modeling.\n\nStep 6: Real-World Example\nPaymentGateway interface implemented by RazorpayGateway and StripeGateway in a SaaS platform.",
+    "tags": ["Java", "Abstraction", "Interfaces", "OOP"]
+  },
+  {
+    "title": "Exception Handling in Java: Checked, Unchecked, and Best Practices",
+    "category": "Java Programming",
+    "read_time": "16 min",
+    "short_description": "Professional exception handling with try-with-resources, custom exceptions, and logging strategies.",
+    "full_content": "Robust exception handling prevents application crashes and improves user experience.\n\nStep 1: Exception Hierarchy\nThrowable > Error and Exception > RuntimeException (unchecked) and checked exceptions.\n\nStep 2: Try-Catch-Finally and Try-With-Resources\nAuto-close resources (e.g., files, connections).\n\nStep 3: Throw and Throws Keywords\nThrow for explicit exceptions; throws in method signature.\n\nStep 4: Creating Custom Exceptions\nExtend Exception or RuntimeException with meaningful messages.\n\nStep 5: Global Exception Handling in Spring Boot\nUse @ControllerAdvice and @ExceptionHandler.\n\nStep 6: Best Practices\nNever swallow exceptions silently; log properly; use specific exceptions over generic ones.\n\nReal-world: Banking app handling InsufficientBalanceException gracefully.",
+    "tags": ["Java", "Exception Handling", "Try-Catch", "Core Java"]
+  },
+  {
+    "title": "Java Collections Framework: List, Set, Map Deep Dive",
+    "category": "Java Programming",
+    "read_time": "22 min",
+    "short_description": "Professional guide to ArrayList, LinkedList, HashSet, TreeMap, and choosing the right collection.",
+    "full_content": "The Collections Framework is one of Java's most powerful libraries for data manipulation.\n\nStep 1: List Interface Implementations\nArrayList (fast random access), LinkedList (fast insertions).\n\nStep 2: Set Interface\nHashSet (no order), LinkedHashSet (insertion order), TreeSet (sorted).\n\nStep 3: Map Interface\nHashMap (fast), LinkedHashMap, TreeMap (sorted keys), ConcurrentHashMap (thread-safe).\n\nStep 4: Iterating Collections\nIterator, enhanced for, forEach with lambda, Streams.\n\nStep 5: Performance and Thread Safety\nUse Collections.synchronizedList() or Concurrent collections in multi-threaded environments.\n\nStep 6: Real-World Example\nUser session management using ConcurrentHashMap in a high-traffic web application.",
+    "tags": ["Java", "Collections", "List", "Set", "Map"]
+  },
+  {
+    "title": "Generics in Java: Type Safety and Advanced Usage",
+    "category": "Java Programming",
+    "read_time": "18 min",
+    "short_description": "Master generics, bounded types, wildcards, and generic methods for type-safe professional code.",
+    "full_content": "Generics provide compile-time type safety and eliminate boilerplate casting.\n\nStep 1: Generic Class and Interface\npublic class Box<T> { private T item; }\n\nStep 2: Bounded Types\n<T extends Number> for numeric constraints.\n\nStep 3: Wildcards: ? extends and ? super\nUpper and lower bounds for flexible APIs (PECS principle).\n\nStep 4: Generic Methods\npublic <T> void printArray(T[] array) { }\n\nStep 5: Type Erasure and Bridge Methods\nHow generics work at bytecode level.\n\nStep 6: Real-World Use\nSpring's RestTemplate or JPA repositories heavily rely on generics for type safety.",
+    "tags": ["Java", "Generics", "Type Safety", "Advanced Java"]
+  },
+  {
+    "title": "Multithreading in Java: Threads, Runnable, and Best Practices",
+    "category": "Java Programming",
+    "read_time": "25 min",
+    "short_description": "Complete professional guide to creating threads, synchronization, and avoiding common concurrency pitfalls.",
+    "full_content": "Multithreading enables concurrent execution and better CPU utilization in modern applications.\n\nStep 1: Creating Threads\nExtend Thread or implement Runnable (preferred).\n\nStep 2: Thread Lifecycle and States\nNEW, RUNNABLE, BLOCKED, WAITING, TIMED_WAITING, TERMINATED.\n\nStep 3: Thread Methods: start(), sleep(), join(), yield().\n\nStep 4: Synchronization and volatile Keyword\nSynchronized blocks/methods prevent race conditions.\n\nStep 5: Deadlock Prevention\nAlways acquire locks in consistent order.\n\nStep 6: Modern Approach (Java 21+)\nUse virtual threads for massive concurrency without thread-per-request model.\n\nReal-world: Background task processing in e-commerce order fulfillment systems.",
+    "tags": ["Java", "Multithreading", "Concurrency", "Advanced Java"]
+  },
+  {
+    "title": "Lambda Expressions and Functional Programming in Java",
+    "category": "Java Programming",
+    "read_time": "19 min",
+    "short_description": "Master lambdas, functional interfaces, method references, and functional programming style.",
+    "full_content": "Java 8 introduced functional programming capabilities that make code concise and expressive.\n\nStep 1: Lambda Syntax\n(parameters) -> expression or { statements }\n\nStep 2: Built-in Functional Interfaces\nPredicate, Function, Consumer, Supplier.\n\nStep 3: Method References\nClass::staticMethod, instance::method, Constructor::new.\n\nStep 4: Writing Custom Functional Interfaces\n@FunctionalInterface annotation.\n\nStep 5: Higher-Order Functions and Composition\nChaining functions for clean pipelines.\n\nStep 6: Real-World Example\nProcessing user lists with streams and lambdas in a Spring Boot microservice.",
+    "tags": ["Java", "Lambda", "Functional Programming", "Java 8"]
+  },
+  {
+    "title": "Java Stream API: Processing Collections Like a Pro",
+    "category": "Java Programming",
+    "read_time": "21 min",
+    "short_description": "Comprehensive guide to Stream operations, parallel streams, collectors, and performance optimization.",
+    "full_content": "Streams provide a declarative way to process data collections with high readability.\n\nStep 1: Creating Streams\nFrom collections, arrays, or Stream.of(), Stream.generate().\n\nStep 2: Intermediate Operations\nfilter(), map(), flatMap(), distinct(), sorted(), limit(), skip().\n\nStep 3: Terminal Operations\nforEach(), collect(), reduce(), count(), anyMatch(), findFirst().\n\nStep 4: Collectors\ntoList(), toMap(), groupingBy(), joining(), partitioningBy().\n\nStep 5: Parallel Streams\nUse with caution for CPU-bound tasks; ensure thread-safety.\n\nStep 6: Real-World Example\nGenerating analytics reports from transaction data in a fintech application.",
+    "tags": ["Java", "Streams", "Stream API", "Java 8", "Functional"]
+  },
+  {
+    "title": "JDBC in Java: Database Connectivity with Best Practices",
+    "category": "Java Programming",
+    "read_time": "20 min",
+    "short_description": "Step-by-step professional JDBC implementation using PreparedStatement, connection pooling, and transaction management.",
+    "full_content": "JDBC is the standard API for connecting Java applications to relational databases.\n\nStep 1: Loading Driver and Getting Connection\nUse DriverManager or DataSource with HikariCP for pooling.\n\nStep 2: PreparedStatement vs Statement\nAlways use PreparedStatement to prevent SQL injection.\n\nStep 3: Executing Queries and Processing ResultSet\nWhile (rs.next()) { } for reading data.\n\nStep 4: Transaction Management\nconn.setAutoCommit(false); commit() or rollback().\n\nStep 5: Resource Management\nUse try-with-resources for automatic closing.\n\nStep 6: Best Practices\nUse connection pools, handle exceptions properly, and prefer ORM like Hibernate for complex applications.\n\nReal-world: User authentication module in any enterprise Java app.",
+    "tags": ["Java", "JDBC", "Database", "SQL"]
+  },
+  {
+    "title": "Building Web Applications with Servlets and JSP: Professional Approach",
+    "category": "Java Programming",
+    "read_time": "23 min",
+    "short_description": "Complete guide to Servlet lifecycle, JSP, filters, and session management for enterprise web apps.",
+    "full_content": "Servlets and JSP form the foundation of Java web development before modern frameworks.\n\nStep 1: Servlet Lifecycle and Deployment Descriptor\ninit(), service(), destroy(). Configure in web.xml or annotations.\n\nStep 2: Handling HTTP Requests\ndoGet(), doPost(), request/response objects.\n\nStep 3: JSP Basics and JSTL\nExpression language, tags, custom tags.\n\nStep 4: Session and Cookie Management\nHttpSession for user state.\n\nStep 5: Filters and Listeners\nIntercept requests for security/logging.\n\nStep 6: Modern Transition\nUse these concepts in Spring MVC under the hood.\n\nReal-world: Legacy banking portals still use this architecture.",
+    "tags": ["Java", "Servlet", "JSP", "Web Development"]
+  },
+  {
+    "title": "Spring Boot: Rapid Development for Enterprise Java Applications",
+    "category": "Java Programming",
+    "read_time": "25 min",
+    "short_description": "Step-by-step guide to creating production-ready Spring Boot applications with auto-configuration and actuators.",
+    "full_content": "Spring Boot eliminates boilerplate and lets you focus on business logic.\n\nStep 1: Project Setup with Spring Initializr\nChoose Maven/Gradle, Java 21, Spring Boot 3.x.\n\nStep 2: Application Structure and Annotations\n@SpringBootApplication, @RestController, @Service, @Repository.\n\nStep 3: Auto-Configuration and Properties\napplication.yml for profiles and externalized config.\n\nStep 4: Embedded Server and DevTools\nTomcat/Jetty by default; hot reloading in development.\n\nStep 5: Actuators and Monitoring\n/health, /metrics for production observability.\n\nStep 6: Packaging and Deployment\nBuild fat JAR and deploy on cloud platforms.\n\nReal-world: Most modern microservices are built with Spring Boot.",
+    "tags": ["Java", "Spring Boot", "Microservices", "Enterprise"]
+  },
+  {
+    "title": "Creating RESTful APIs with Spring Boot: Professional Standards",
+    "category": "Java Programming",
+    "read_time": "24 min",
+    "short_description": "Build secure, documented, paginated REST APIs following industry best practices.",
+    "full_content": "REST APIs are the backbone of modern microservices.\n\nStep 1: @RestController and HTTP Methods\n@GetMapping, @PostMapping, @PutMapping, @DeleteMapping.\n\nStep 2: Request and Response Handling\n@PathVariable, @RequestBody, @RequestParam.\n\nStep 3: Exception Handling and Validation\n@Valid, @ControllerAdvice, custom exceptions.\n\nStep 4: Pagination and Sorting\nPageable interface for large datasets.\n\nStep 5: Swagger/OpenAPI Documentation\nUse springdoc-openapi for automatic docs.\n\nStep 6: Security with Spring Security\nJWT or OAuth2 integration.\n\nReal-world: Backend for mobile apps or frontend SPAs.",
+    "tags": ["Java", "Spring Boot", "REST API", "Microservices"]
+  },
+  {
+    "title": "Hibernate ORM: Mastering Object-Relational Mapping in Java",
+    "category": "Java Programming",
+    "read_time": "22 min",
+    "short_description": "Professional Hibernate configuration, entity mapping, relationships, and query optimization.",
+    "full_content": "Hibernate simplifies database operations by mapping Java objects to tables.\n\nStep 1: Entity Classes and Annotations\n@Entity, @Id, @GeneratedValue, @Column.\n\nStep 2: Relationships\n@OneToMany, @ManyToOne, @ManyToMany with proper cascading.\n\nStep 3: Configuration with application.properties\nDialect, HikariCP pool settings.\n\nStep 4: JPQL and Criteria API\nType-safe queries with CriteriaBuilder.\n\nStep 5: Caching (1st and 2nd level) and Lazy/Eager Loading\nOptimize performance carefully.\n\nStep 6: Integration with Spring Data JPA\nRepository pattern for even less boilerplate.\n\nReal-world: Used in 90% of enterprise Java applications for persistence.",
+    "tags": ["Java", "Hibernate", "ORM", "Spring Boot"]
+  },
+  {
+    "title": "Design Patterns in Java: Essential Patterns for Professional Developers",
+    "category": "Java Programming",
+    "read_time": "28 min",
+    "short_description": "Deep dive into Singleton, Factory, Observer, Strategy, and other Gang of Four patterns with code examples.",
+    "full_content": "Design patterns solve recurring problems with proven solutions.\n\nStep 1: Creational Patterns\nSingleton (enum implementation), Factory Method, Abstract Factory, Builder.\n\nStep 2: Structural Patterns\nAdapter, Decorator, Proxy, Facade, Composite.\n\nStep 3: Behavioral Patterns\nObserver, Strategy, Command, Template Method, Chain of Responsibility.\n\nStep 4: Implementing in Spring\nSpring uses many patterns internally (e.g., Proxy for @Transactional).\n\nStep 5: When and Why to Use Patterns\nAvoid over-engineering; apply only when needed.\n\nStep 6: Real-World Example\nStrategy pattern for different payment processors in an e-commerce checkout system.",
+    "tags": ["Java", "Design Patterns", "OOP", "Advanced"]
+  },
+  {
+    "title": "Java Virtual Machine (JVM) Architecture: Internals Explained",
+    "category": "Java Programming",
+    "read_time": "19 min",
+    "short_description": "Professional understanding of JVM components, class loading, and memory areas.",
+    "full_content": "Understanding JVM helps in debugging performance issues and tuning applications.\n\nStep 1: JVM Architecture Overview\nClass Loader, Runtime Data Areas, Execution Engine, JIT Compiler.\n\nStep 2: Class Loading Process\nLoading, Linking (Verify, Prepare, Resolve), Initialization.\n\nStep 3: Runtime Data Areas\nHeap, Stack, Metaspace, PC Register, Native Method Stack.\n\nStep 4: Garbage Collection Algorithms\nG1, ZGC, Shenandoah – choose based on latency vs throughput.\n\nStep 5: JIT Compilation and HotSpot Optimizations\nC1 and C2 compilers.\n\nStep 6: JVM Tuning Flags\n-Xms, -Xmx, -XX:+UseG1GC for production servers.",
+    "tags": ["Java", "JVM", "Internals", "Performance"]
+  },
+  {
+    "title": "Garbage Collection in Java: Algorithms, Tuning, and Best Practices",
+    "category": "Java Programming",
+    "read_time": "20 min",
+    "short_description": "Master GC mechanisms, generational collection, and low-latency tuning for production systems.",
+    "full_content": "Garbage collection automatically reclaims memory, but poor tuning can cause pauses.\n\nStep 1: Generational GC\nYoung Generation (Eden, Survivor) and Old Generation.\n\nStep 2: GC Algorithms\nSerial, Parallel, CMS, G1 (default), ZGC (low pause).\n\nStep 3: GC Logs and Monitoring\nEnable -Xlog:gc* and use VisualVM or JMC.\n\nStep 4: Tuning for Throughput vs Latency\nAdjust heap sizes, pause time goals.\n\nStep 5: Modern GC in Java 21\nZGC and Shenandoah are fully concurrent.\n\nStep 6: Real-World Tuning\nHigh-traffic microservices use ZGC for sub-millisecond pauses.",
+    "tags": ["Java", "Garbage Collection", "JVM", "Performance"]
+  },
+  {
+    "title": "File Handling in Java: Reading, Writing, and NIO.2 Best Practices",
+    "category": "Java Programming",
+    "read_time": "17 min",
+    "short_description": "Professional file I/O using java.io and modern java.nio with asynchronous capabilities.",
+    "full_content": "Efficient file handling is crucial for logging, configuration, and data processing.\n\nStep 1: java.io Package Basics\nFile, FileInputStream, BufferedReader.\n\nStep 2: Try-With-Resources for Auto-Closing\nAlways use for streams.\n\nStep 3: NIO.2 (java.nio.file)\nPath, Files, DirectoryStream – non-blocking and scalable.\n\nStep 4: Reading/Writing Large Files\nUse Buffered streams or Files.newBufferedReader().\n\nStep 5: Asynchronous File I/O\nAsynchronousFileChannel for high-performance apps.\n\nStep 6: Real-World Example\nProcessing uploaded CSVs in a Spring Boot file service.",
+    "tags": ["Java", "File I/O", "NIO", "Core Java"]
+  },
+  {
+    "title": "Java Date and Time API: Modern Handling with java.time",
+    "category": "Java Programming",
+    "read_time": "13 min",
+    "short_description": "Replace legacy Date/Calendar with immutable, thread-safe java.time package.",
+    "full_content": "The java.time API (JSR-310) introduced in Java 8 is the professional standard for date-time operations.\n\nStep 1: Core Classes\nLocalDate, LocalTime, LocalDateTime, ZonedDateTime, Instant.\n\nStep 2: Formatting and Parsing\nDateTimeFormatter with patterns and locales.\n\nStep 3: Duration and Period\nCalculate differences between dates.\n\nStep 4: Temporal Adjusters and Queries\nFirst day of month, next Friday, etc.\n\nStep 5: Time Zones and Daylight Saving\nZonedDateTime handles DST automatically.\n\nStep 6: Real-World Example\nScheduling reports or handling user time zones in global applications.",
+    "tags": ["Java", "Date Time", "java.time", "Java 8"]
+  },
+  {
+    "title": "Regular Expressions in Java: Pattern Matching and Performance",
+    "category": "Java Programming",
+    "read_time": "15 min",
+    "short_description": "Master java.util.regex for validation, searching, and text processing with best practices.",
+    "full_content": "Regex is essential for input validation and text manipulation.\n\nStep 1: Pattern and Matcher Classes\nPattern.compile() once and reuse Matcher.\n\nStep 2: Common Patterns\nEmail, phone, URL, password strength.\n\nStep 3: Methods: matches(), find(), replaceAll(), group().\n\nStep 4: Flags and Advanced Constructs\nCASE_INSENSITIVE, DOTALL, lookaheads.\n\nStep 5: Performance Tips\nPre-compile patterns; avoid catastrophic backtracking.\n\nStep 6: Real-World Example\nValidating user input in Spring Boot REST controllers.",
+    "tags": ["Java", "Regex", "Pattern Matching"]
+  },
+  {
+    "title": "Java Platform Module System (JPMS): Modular Applications",
+    "category": "Java Programming",
+    "read_time": "18 min",
+    "short_description": "Build modular, secure, and maintainable Java applications using modules (introduced in Java 9).",
+    "full_content": "JPMS improves encapsulation and reduces classpath issues.\n\nStep 1: module-info.java\nmodule com.example.app { requires java.sql; exports com.example.api; }\n\nStep 2: Named, Automatic, and Unnamed Modules\nService providers with provides/uses.\n\nStep 3: Module Path vs Classpath\nStrong encapsulation by default.\n\nStep 4: Migration Strategies for Legacy Code\nUse --add-opens for reflection-heavy libraries.\n\nStep 5: Benefits in Microservices\nSmaller JARs, faster startup, better security.\n\nStep 6: Real-World Example\nModular Spring Boot applications for large enterprises.",
+    "tags": ["Java", "Modules", "JPMS", "Java 9"]
+  },
+  {
+    "title": "Advanced Concurrency Utilities in Java: Executors, Callable, Future",
+    "category": "Java Programming",
+    "read_time": "21 min",
+    "short_description": "Professional thread pool management, CompletableFuture, and reactive patterns.",
+    "full_content": "java.util.concurrent package provides high-level concurrency primitives.\n\nStep 1: ExecutorService and Thread Pools\nFixedThreadPool, CachedThreadPool, ScheduledThreadPool.\n\nStep 2: Callable and Future\nReturn values from threads; handle exceptions.\n\nStep 3: CompletableFuture\nChaining asynchronous tasks with thenApply, thenCompose, exceptionally.\n\nStep 4: CountDownLatch, CyclicBarrier, Semaphore, Phaser.\n\nStep 5: Fork/Join Framework for parallel processing.\n\nStep 6: Real-World Example\nParallel image processing or API aggregation in high-scale services.",
+    "tags": ["Java", "Concurrency", "Executors", "CompletableFuture"]
+  },
+  {
+    "title": "New Features in Java 21: Virtual Threads and Beyond",
+    "category": "Java Programming",
+    "read_time": "16 min",
+    "short_description": "Explore virtual threads, structured concurrency, pattern matching, and other Java 21 enhancements.",
+    "full_content": "Java 21 (LTS) brings revolutionary changes for scalability.\n\nStep 1: Virtual Threads (Project Loom)\nThread-per-request without OS thread overhead.\n\nStep 2: Structured Concurrency\nScoped values and structured task management.\n\nStep 3: Pattern Matching for switch and instanceof.\n\nStep 4: Record Patterns and Sequenced Collections.\n\nStep 5: String Templates (preview) and other enhancements.\n\nStep 6: Migration and Adoption Strategy\nGradual migration from older Java versions with excellent backward compatibility.",
+    "tags": ["Java", "Java 21", "Virtual Threads", "New Features"]
+  },
+  {
+    "title": "Building GUI Applications with JavaFX: Professional Guide",
+    "category": "Java Programming",
+    "read_time": "19 min",
+    "short_description": "Create modern, responsive desktop applications using JavaFX with FXML and CSS styling.",
+    "full_content": "JavaFX is the modern standard for rich client applications.\n\nStep 1: Setting Up JavaFX Project\nMaven/Gradle dependencies and module configuration.\n\nStep 2: Scene Graph and Controls\nStage, Scene, Button, TableView, etc.\n\nStep 3: FXML for Separation of UI and Logic\nController classes with @FXML annotations.\n\nStep 4: CSS Styling and Animations\nProfessional look with modern themes.\n\nStep 5: Event Handling and Properties\nObservable properties for data binding.\n\nStep 6: Packaging and Deployment\nCreate native executables with jpackage.",
+    "tags": ["Java", "JavaFX", "GUI", "Desktop"]
+  },
+  {
+    "title": "Unit Testing in Java with JUnit 5: Professional Practices",
+    "category": "Java Programming",
+    "read_time": "17 min",
+    "short_description": "Master JUnit 5, Mockito, Testcontainers, and TDD for reliable enterprise code.",
+    "full_content": "Testing ensures code quality and prevents regressions.\n\nStep 1: JUnit 5 Setup\n@Test, @BeforeEach, @AfterEach, parameterized tests.\n\nStep 2: Assertions and Assumptions\nassertEquals, assertThrows, assertTimeout.\n\nStep 3: Mockito for Mocking\nMock dependencies in services.\n\nStep 4: Integration Testing with Testcontainers\nSpin up real databases for tests.\n\nStep 5: Spring Boot Test Annotations\n@SpringBootTest, @WebMvcTest, @DataJpaTest.\n\nStep 6: Coverage and CI/CD Integration\nJaCoCo and GitHub Actions/Jenkins.",
+    "tags": ["Java", "JUnit", "Testing", "TDD"]
+  },
+  {
+    "title": "Build Tools for Java: Maven vs Gradle – Professional Comparison",
+    "category": "Java Programming",
+    "read_time": "15 min",
+    "short_description": "Choose and master the right build tool for large-scale Java projects.",
+    "full_content": "Build tools automate dependency management, compilation, and packaging.\n\nStep 1: Maven Fundamentals\nPOM.xml, phases (clean, compile, test, package), plugins.\n\nStep 2: Gradle DSL and Kotlin Script\nbuild.gradle.kts – more flexible and faster.\n\nStep 3: Dependency Management\nVersions, scopes, BOMs.\n\nStep 4: Multi-Module Projects\nBest for microservices.\n\nStep 5: Performance Comparison\nGradle is faster for large projects; Maven has better plugin ecosystem.\n\nStep 6: Real-World Recommendation\nSpring Boot projects use either; most new projects prefer Gradle.",
+    "tags": ["Java", "Maven", "Gradle", "Build Tools"]
+  },
+  {
+    "title": "Microservices Architecture with Spring Boot and Spring Cloud",
+    "category": "Java Programming",
+    "read_time": "26 min",
+    "short_description": "Design, implement, and deploy scalable microservices using industry-standard patterns.",
+    "full_content": "Microservices enable independent deployment and scalability.\n\nStep 1: Service Decomposition\nBounded contexts using DDD.\n\nStep 2: Spring Cloud Netflix/Eureka\nService discovery and registration.\n\nStep 3: API Gateway with Spring Cloud Gateway\nRouting, rate limiting, circuit breaker.\n\nStep 4: Distributed Tracing with Zipkin/Sleuth.\n\nStep 5: Config Server and Resilience4j.\n\nStep 6: Containerization with Docker and Kubernetes.\n\nReal-world: Netflix, Amazon, and most modern enterprises use this architecture.",
+    "tags": ["Java", "Microservices", "Spring Cloud", "Architecture"]
+  },
+  {
+    "title": "Security Best Practices in Java Applications",
+    "category": "Java Programming",
+    "read_time": "20 min",
+    "short_description": "Implement authentication, authorization, encryption, and OWASP compliance professionally.",
+    "full_content": "Security is non-negotiable in production systems.\n\nStep 1: Spring Security Configuration\nJWT, OAuth2, role-based access.\n\nStep 2: Input Validation and Sanitization\nPrevent XSS, CSRF, SQL injection.\n\nStep 3: Password Hashing with BCrypt.\n\nStep 4: HTTPS, CORS, and Header Security.\n\nStep 5: Dependency Vulnerability Scanning with OWASP Dependency-Check.\n\nStep 6: Logging Sensitive Data and Audit Trails.\n\nReal-world: Compliance with GDPR, PCI-DSS in banking apps.",
+    "tags": ["Java", "Security", "Spring Security", "Best Practices"]
+  },
+  {
+    "title": "Logging in Java: SLF4J, Logback, and Log4j2 Professional Setup",
+    "category": "Java Programming",
+    "read_time": "14 min",
+    "short_description": "Structured logging, levels, appenders, and integration with ELK stack.",
+    "full_content": "Proper logging is critical for debugging and monitoring.\n\nStep 1: SLF4J as Facade\nAbstract logging framework.\n\nStep 2: Logback Configuration\nlogback-spring.xml with profiles.\n\nStep 3: Log4j2 for High Performance\nAsync appenders and garbage-free logging.\n\nStep 4: Log Levels and MDC (Mapped Diagnostic Context).\n\nStep 5: Integration with Spring Boot Actuator and ELK (Elasticsearch, Logstash, Kibana).\n\nStep 6: Best Practices\nNever log sensitive data; use JSON layout for structured logs.",
+    "tags": ["Java", "Logging", "SLF4J", "Logback"]
+  },
+  {
+    "title": "Dependency Injection in Spring Framework: Professional Concepts",
+    "category": "Java Programming",
+    "read_time": "16 min",
+    "short_description": "Master constructor injection, field injection, qualifiers, and circular dependency resolution.",
+    "full_content": "Dependency Injection is the heart of Spring's IoC container.\n\nStep 1: @Autowired, @Qualifier, @Primary.\n\nStep 2: Constructor Injection (Recommended).\n\nStep 3: Bean Scopes: Singleton, Prototype, Request, Session.\n\nStep 4: Java Config vs XML (Modern: @Configuration).\n\nStep 5: Handling Circular Dependencies.\n\nStep 6: Real-World Example\nService layer injecting repositories in a layered architecture.",
+    "tags": ["Java", "Spring", "Dependency Injection", "IoC"]
+  },
+  {
+    "title": "Aspect-Oriented Programming with Spring AOP",
+    "category": "Java Programming",
+    "read_time": "18 min",
+    "short_description": "Implement cross-cutting concerns like logging, transactions, and security using aspects.",
+    "full_content": "AOP separates concerns that cut across multiple classes.\n\nStep 1: @Aspect, @Pointcut, @Before, @After, @Around.\n\nStep 2: Join Points and Advice Types.\n\nStep 3: Spring AOP vs AspectJ (Proxy-based vs full weave).\n\nStep 4: @Transactional as Built-in Aspect.\n\nStep 5: Custom Aspects for Auditing and Rate Limiting.\n\nStep 6: Performance Considerations and Best Practices.",
+    "tags": ["Java", "Spring AOP", "Aspect Oriented", "Advanced"]
+  },
+  {
+    "title": "Java Annotations: Creating and Using Custom Annotations",
+    "category": "Java Programming",
+    "read_time": "13 min",
+    "short_description": "Build powerful custom annotations with processors and meta-annotations.",
+    "full_content": "Annotations add metadata and enable frameworks like Spring.\n\nStep 1: Built-in Annotations (@Override, @Deprecated).\n\nStep 2: Creating Custom Annotations\n@Target, @Retention, @Documented.\n\nStep 3: Annotation Processors (APT) for compile-time code generation.\n\nStep 4: Meta-Annotations and Composed Annotations.\n\nStep 5: Real-World Example\nCustom validation annotation in Spring Boot (@ValidPassword).",
+    "tags": ["Java", "Annotations", "Custom Annotations"]
+  },
+  {
+    "title": "Reflection API in Java: Dynamic Class Inspection and Usage",
+    "category": "Java Programming",
+    "read_time": "15 min",
+    "short_description": "Professional use of reflection for frameworks, serialization, and testing while understanding security implications.",
+    "full_content": "Reflection allows runtime inspection and modification of classes.\n\nStep 1: Class, Method, Field, Constructor access.\n\nStep 2: Invoking Methods Dynamically.\n\nStep 3: Accessing Private Members (setAccessible(true)).\n\nStep 4: Performance and Security Considerations\nReflection is slower; avoid in hot paths.\n\nStep 5: Real-World Use\nSpring uses reflection heavily for dependency injection and bean creation.",
+    "tags": ["Java", "Reflection", "Advanced Java"]
+  },
+  {
+    "title": "Java Memory Management: Heap, Stack, Metaspace, and Tuning",
+    "category": "Java Programming",
+    "read_time": "17 min",
+    "short_description": "Understand memory areas and tune for high-performance, low-latency applications.",
+    "full_content": "Proper memory management prevents OutOfMemoryErrors in production.\n\nStep 1: Heap (Young + Old), Stack per thread, Metaspace.\n\nStep 2: Object Allocation and Escape Analysis.\n\nStep 3: Memory Leaks Common Causes (static references, unclosed resources).\n\nStep 4: Tools: jmap, jstack, VisualVM, JMC.\n\nStep 5: Tuning Flags for Production Servers.",
+    "tags": ["Java", "Memory Management", "JVM"]
+  },
+  {
+    "title": "Performance Optimization Techniques in Java Applications",
+    "category": "Java Programming",
+    "read_time": "22 min",
+    "short_description": "Profiling, caching, database optimization, and code-level improvements for high-scale systems.",
+    "full_content": "Performance is a feature. This guide covers end-to-end optimization.\n\nStep 1: Profiling with JProfiler or Async Profiler.\n\nStep 2: Code-Level Optimizations (avoid autoboxing, use primitives).\n\nStep 3: Caching with Caffeine or Redis.\n\nStep 4: Database Query Optimization and Indexing.\n\nStep 5: JVM Tuning and Native Image with GraalVM.\n\nStep 6: Real-World Example\nReducing latency in a high-traffic payment gateway.",
+    "tags": ["Java", "Performance", "Optimization", "Profiling"]
+  },
+  {
+    "title": "Java Best Practices and Clean Code Principles",
+    "category": "Java Programming",
+    "read_time": "14 min",
+    "short_description": "Follow industry standards, SOLID principles, and maintainable code guidelines.",
+    "full_content": "Clean code leads to maintainable, bug-free systems.\n\nStep 1: Naming Conventions and Comments.\n\nStep 2: SOLID Principles in Practice.\n\nStep 3: Avoid Code Smells (God Class, Long Methods).\n\nStep 4: Code Reviews and Static Analysis (SonarQube).\n\nStep 5: Version Control and Git Flow.\n\nStep 6: Continuous Learning and Community Standards.",
+    "tags": ["Java", "Best Practices", "Clean Code"]
+  },
+  {
+    "title": "Working with JSON in Java: Jackson and Gson Professional Guide",
+    "category": "Java Programming",
+    "read_time": "12 min",
+    "short_description": "Serialize and deserialize JSON efficiently with annotations and custom serializers.",
+    "full_content": "JSON is the standard for data exchange in modern APIs.\n\nStep 1: Jackson Setup in Spring Boot.\n\nStep 2: @JsonProperty, @JsonIgnore, @JsonFormat.\n\nStep 3: Custom Serializers/Deserializers.\n\nStep 4: Performance Comparison with Gson.\n\nStep 5: Handling Large JSON and Streaming.\n\nStep 6: Real-World Example\nREST API request/response handling.",
+    "tags": ["Java", "JSON", "Jackson", "Gson"]
+  },
+  {
+    "title": "Dockerizing Java Applications: Complete Guide",
+    "category": "Java Programming",
+    "read_time": "16 min",
+    "short_description": "Build lightweight, secure Docker images for Spring Boot applications with multi-stage builds.",
+    "full_content": "Containerization ensures consistent deployment across environments.\n\nStep 1: Dockerfile Best Practices\nMulti-stage build to reduce image size.\n\nStep 2: .dockerignore and Layer Caching.\n\nStep 3: Environment Variables and Secrets.\n\nStep 4: Health Checks and Non-Root User.\n\nStep 5: Docker Compose for Local Development.\n\nStep 6: Pushing to Docker Hub or ECR.",
+    "tags": ["Java", "Docker", "Containerization", "DevOps"]
+  },
+  {
+    "title": "Kubernetes for Java Microservices: Deployment and Scaling",
+    "category": "Java Programming",
+    "read_time": "20 min",
+    "short_description": "Deploy, scale, and monitor Java microservices on Kubernetes with Helm and operators.",
+    "full_content": "Kubernetes is the de-facto standard for orchestrating microservices.\n\nStep 1: Kubernetes Resources (Deployment, Service, ConfigMap, Secret).\n\nStep 2: Helm Charts for Packaging.\n\nStep 3: Horizontal Pod Autoscaler and Resource Limits.\n\nStep 4: Liveness and Readiness Probes.\n\nStep 5: Logging and Monitoring with Prometheus + Grafana.\n\nStep 6: CI/CD Pipeline with ArgoCD or Jenkins.",
+    "tags": ["Java", "Kubernetes", "Microservices", "DevOps"]
+  },
+  {
+    "title": "Event-Driven Architecture with Apache Kafka and Java",
+    "category": "Java Programming",
+    "read_time": "19 min",
+    "short_description": "Build scalable, decoupled systems using Kafka producers, consumers, and Spring Kafka.",
+    "full_content": "Event-driven systems handle high throughput asynchronously.\n\nStep 1: Kafka Concepts (Topics, Partitions, Brokers).\n\nStep 2: Spring Kafka Integration\n@KafkaListener and KafkaTemplate.\n\nStep 3: Exactly-Once Semantics and Idempotence.\n\nStep 4: Schema Registry with Avro.\n\nStep 5: Real-World Example\nOrder processing pipeline in e-commerce.",
+    "tags": ["Java", "Kafka", "Event Driven", "Spring"]
+  },
+  {
+    "title": "GraphQL with Java and Spring Boot: Complete Implementation",
+    "category": "Java Programming",
+    "read_time": "18 min",
+    "short_description": "Build flexible, efficient APIs using Spring GraphQL or Netflix DGS framework.",
+    "full_content": "GraphQL solves over-fetching/under-fetching problems of REST.\n\nStep 1: Schema-First or Code-First Approach.\n\nStep 2: Resolvers and Data Fetchers.\n\nStep 3: Query, Mutation, Subscription.\n\nStep 4: Security and Pagination.\n\nStep 5: Integration with Spring Data.\n\nStep 6: Real-World Use\nMobile and frontend clients consuming flexible data.",
+    "tags": ["Java", "GraphQL", "Spring Boot", "API"]
+  },
+  {
+    "title": "Machine Learning with Java: Weka and Deeplearning4j",
+    "category": "Java Programming",
+    "read_time": "17 min",
+    "short_description": "Build ML models using pure Java libraries for classification, regression, and neural networks.",
+    "full_content": "Java is viable for ML in enterprise environments.\n\nStep 1: Weka for Traditional ML\nLoad dataset, train classifiers, evaluate.\n\nStep 2: Deeplearning4j for Deep Learning\nND4J for tensors, CNNs, RNNs.\n\nStep 3: Model Training and Evaluation Metrics.\n\nStep 4: Integration with Spring Boot for serving models.\n\nStep 5: Production Deployment Considerations.",
+    "tags": ["Java", "Machine Learning", "Weka", "Deeplearning4j"]
+  },
+  {
+    "title": "Debugging and Profiling Java Applications Like a Pro",
+    "category": "Java Programming",
+    "read_time": "15 min",
+    "short_description": "Master breakpoints, remote debugging, profilers, and production troubleshooting techniques.",
+    "full_content": "Effective debugging saves hours in production incidents.\n\nStep 1: IDE Debugging (IntelliJ, Eclipse).\n\nStep 2: Remote Debugging with JDWP.\n\nStep 3: Profilers: VisualVM, JProfiler, Async Profiler.\n\nStep 4: Thread Dumps and Heap Dumps Analysis.\n\nStep 5: Production Tools: Arthas, jcmd.\n\nStep 6: Real-World Troubleshooting of memory leaks or high CPU.",
+    "tags": ["Java", "Debugging", "Profiling", "Troubleshooting"]
+  },
+  {
+    "title": "Java and MongoDB Integration: Professional NoSQL Development",
+    "category": "Java Programming",
+    "read_time": "16 min",
+    "short_description": "Use Spring Data MongoDB for reactive and non-reactive document database operations.",
+    "full_content": "MongoDB pairs perfectly with Java for flexible schema applications.\n\nStep 1: MongoTemplate vs MongoRepository.\n\nStep 2: Document Mapping and @Document Annotation.\n\nStep 3: Aggregation Framework and Transactions.\n\nStep 4: Reactive Mongo with WebFlux.\n\nStep 5: Indexing and Query Optimization.\n\nStep 6: Real-World Example\nContent management or user analytics system.",
+    "tags": ["Java", "MongoDB", "NoSQL", "Spring Data"]
+  },
+  {
+    "title": "Serverless Java with AWS Lambda: Production-Ready Guide",
+    "category": "Java Programming",
+    "read_time": "14 min",
+    "short_description": "Build, deploy, and optimize Java functions on AWS Lambda with best practices.",
+    "full_content": "Serverless reduces operational overhead.\n\nStep 1: Lambda Function Setup with Maven.\n\nStep 2: Handler Classes and Request/Response Models.\n\nStep 3: Cold Start Optimization with SnapStart.\n\nStep 4: Integration with API Gateway and DynamoDB.\n\nStep 5: Monitoring with CloudWatch and X-Ray.\n\nStep 6: Cost Optimization Strategies.",
+    "tags": ["Java", "AWS Lambda", "Serverless", "Cloud"]
+  },
+  {
+    "title": "Migrating Legacy Java Code to Modern Java 21",
+    "category": "Java Programming",
+    "read_time": "18 min",
+    "short_description": "Step-by-step migration strategy from Java 8 to Java 21 with minimal downtime.",
+    "full_content": "Modernizing legacy code unlocks performance and new features.\n\nStep 1: Incremental Migration Approach.\n\nStep 2: Replace Deprecated APIs (e.g., Date to java.time).\n\nStep 3: Adopt Records, Sealed Classes, Pattern Matching.\n\nStep 4: Update Build Tools and Dependencies.\n\nStep 5: Testing and Canary Deployments.\n\nStep 6: Benefits: Faster startup, lower memory, virtual threads.",
+    "tags": ["Java", "Migration", "Java 21", "Modernization"]
+  }
+]
