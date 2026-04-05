@@ -1,0 +1,406 @@
+[
+  {
+    "title": "Introduction to Java Programming",
+    "category": "Technology",
+    "read_time": "5 min",
+    "short_description": "Understand what Java is, its features, and why it is widely used.",
+    "full_content": "Java is a high-level, object-oriented programming language developed by Sun Microsystems. It follows the principle of Write Once, Run Anywhere.\n\nStep 1: Install JDK\nDownload and install Java Development Kit.\n\nStep 2: Setup Environment\nSet JAVA_HOME and PATH variables.\n\nStep 3: Write First Program\nCreate HelloWorld.java and print output.\n\nFeatures:\n- Platform Independent\n- Object-Oriented\n- Secure and Robust\n\nJava is widely used in web, mobile, and enterprise applications.",
+    "tags": ["Java", "Introduction", "Programming"]
+  },
+  {
+    "title": "Java Installation Guide (JDK Setup)",
+    "category": "Technology",
+    "read_time": "6 min",
+    "short_description": "Step-by-step guide to install Java JDK and configure environment variables.",
+    "full_content": "Step 1: Download JDK from Oracle website.\nStep 2: Install the setup file.\nStep 3: Set JAVA_HOME in environment variables.\nStep 4: Add bin folder to PATH.\nStep 5: Verify installation using java -version.\n\nThis setup is required before writing any Java program.",
+    "tags": ["Java", "JDK", "Setup"]
+  },
+  {
+    "title": "Java Hello World Program Explained",
+    "category": "Technology",
+    "read_time": "4 min",
+    "short_description": "Learn how to write and run your first Java program.",
+    "full_content": "public class HelloWorld {\n public static void main(String[] args) {\n  System.out.println(\"Hello World\");\n }\n}\n\nStep 1: Save file as HelloWorld.java\nStep 2: Compile using javac\nStep 3: Run using java command\n\nThis is the entry point of Java programs.",
+    "tags": ["Java", "Basics", "Hello World"]
+  },
+  {
+    "title": "Java Variables and Data Types",
+    "category": "Technology",
+    "read_time": "7 min",
+    "short_description": "Learn about variables and different data types in Java.",
+    "full_content": "Java supports primitive and non-primitive data types.\n\nPrimitive Types:\n- int\n- float\n- double\n- char\n- boolean\n\nStep 1: Declare variable\nStep 2: Assign value\nStep 3: Use in program\n\nExample:\nint age = 20;\n\nVariables store data used in programs.",
+    "tags": ["Java", "Variables", "Data Types"]
+  },
+  {
+    "title": "Java Operators Explained",
+    "category": "Technology",
+    "read_time": "6 min",
+    "short_description": "Understand arithmetic, logical, and relational operators in Java.",
+    "full_content": "Operators perform operations on variables.\n\nTypes:\n- Arithmetic (+, -, *, /)\n- Relational (==, !=, >, <)\n- Logical (&&, ||)\n\nExample:\nint sum = a + b;\n\nOperators are essential for calculations and conditions.",
+    "tags": ["Java", "Operators"]
+  },
+  {
+    "title": "Java Conditional Statements (if-else, switch)",
+    "category": "Technology",
+    "read_time": "7 min",
+    "short_description": "Learn decision-making using if-else and switch statements.",
+    "full_content": "Conditional statements control program flow.\n\nif-else Example:\nif(age > 18) {\n System.out.println(\"Adult\");\n}\n\nswitch Example:\nswitch(day) {\n case 1: break;\n}\n\nUsed for decision-making logic.",
+    "tags": ["Java", "Conditions"]
+  },
+  {
+    "title": "Java Loops (for, while, do-while)",
+    "category": "Technology",
+    "read_time": "8 min",
+    "short_description": "Understand looping constructs in Java.",
+    "full_content": "Loops repeat code execution.\n\nTypes:\n- for loop\n- while loop\n- do-while loop\n\nExample:\nfor(int i=0;i<5;i++) {\n System.out.println(i);\n}\n\nUsed for iteration tasks.",
+    "tags": ["Java", "Loops"]
+  },
+  {
+    "title": "Java Arrays Explained",
+    "category": "Technology",
+    "read_time": "8 min",
+    "short_description": "Learn how to store multiple values using arrays.",
+    "full_content": "Arrays store multiple values of same type.\n\nExample:\nint arr[] = {1,2,3};\n\nStep 1: Declare array\nStep 2: Initialize\nStep 3: Access using index\n\nArrays are used in data storage.",
+    "tags": ["Java", "Arrays"]
+  },
+  {
+    "title": "Java Strings and String Methods",
+    "category": "Technology",
+    "read_time": "7 min",
+    "short_description": "Learn how to work with strings in Java.",
+    "full_content": "Strings are objects in Java.\n\nCommon Methods:\n- length()\n- toUpperCase()\n- charAt()\n\nExample:\nString name = \"Java\";\n\nUsed for text processing.",
+    "tags": ["Java", "Strings"]
+  },
+  {
+    "title": "Object-Oriented Programming in Java",
+    "category": "Technology",
+    "read_time": "10 min",
+    "short_description": "Understand OOP concepts in Java.",
+    "full_content": "OOP is core of Java.\n\nConcepts:\n- Class\n- Object\n- Inheritance\n- Polymorphism\n- Encapsulation\n\nExample:\nclass Car {}\n\nUsed in real-world applications.",
+    "tags": ["Java", "OOP"]
+  },
+
+  {
+    "title": "Java Classes and Objects",
+    "category": "Technology",
+    "read_time": "8 min",
+    "short_description": "Learn how to create classes and objects in Java.",
+    "full_content": "Class is a blueprint.\nObject is instance.\n\nExample:\nclass Student {\n int id;\n}\n\nStudent s = new Student();\n\nUsed to structure programs.",
+    "tags": ["Java", "Classes", "Objects"]
+  },
+
+  {
+    "title": "Java Constructors Explained",
+    "category": "Technology",
+    "read_time": "7 min",
+    "short_description": "Understand constructors in Java.",
+    "full_content": "Constructors initialize objects.\n\nTypes:\n- Default\n- Parameterized\n\nExample:\nStudent(int id) {}\n\nCalled automatically during object creation.",
+    "tags": ["Java", "Constructors"]
+  },
+
+  {
+    "title": "Java Inheritance Explained",
+    "category": "Technology",
+    "read_time": "9 min",
+    "short_description": "Learn inheritance and its types in Java.",
+    "full_content": "Inheritance allows code reuse.\n\nTypes:\n- Single\n- Multilevel\n- Hierarchical\n\nExample:\nclass A {}\nclass B extends A {}\n\nImproves code reusability.",
+    "tags": ["Java", "Inheritance"]
+  },
+
+  {
+    "title": "Java Polymorphism Explained",
+    "category": "Technology",
+    "read_time": "8 min",
+    "short_description": "Understand method overloading and overriding.",
+    "full_content": "Polymorphism means many forms.\n\nTypes:\n- Compile-time\n- Runtime\n\nExample:\nmethod overloading\n\nUsed for flexibility.",
+    "tags": ["Java", "Polymorphism"]
+  },
+
+  {
+    "title": "Java Encapsulation Explained",
+    "category": "Technology",
+    "read_time": "7 min",
+    "short_description": "Learn how to protect data using encapsulation.",
+    "full_content": "Encapsulation binds data and methods.\n\nUse private variables and getters/setters.\n\nImproves security.",
+    "tags": ["Java", "Encapsulation"]
+  },
+
+  {
+    "title": "Java Abstraction Explained",
+    "category": "Technology",
+    "read_time": "8 min",
+    "short_description": "Understand abstraction using abstract classes and interfaces.",
+    "full_content": "Abstraction hides details.\n\nUse abstract class and interface.\n\nExample:\nabstract class Shape {}\n\nImproves design.",
+    "tags": ["Java", "Abstraction"]
+  },
+
+  {
+    "title": "Java Interfaces Explained",
+    "category": "Technology",
+    "read_time": "7 min",
+    "short_description": "Learn how interfaces work in Java.",
+    "full_content": "Interface defines methods.\n\nExample:\ninterface Animal {}\n\nUsed for multiple inheritance.",
+    "tags": ["Java", "Interfaces"]
+  },
+
+  {
+    "title": "Java Exception Handling",
+    "category": "Technology",
+    "read_time": "9 min",
+    "short_description": "Handle errors using try-catch blocks.",
+    "full_content": "Exception handling prevents crashes.\n\nBlocks:\n- try\n- catch\n- finally\n\nExample:\ntry {}\ncatch(Exception e) {}\n\nImproves program stability.",
+    "tags": ["Java", "Exceptions"]
+  },
+
+  {
+    "title": "Java File Handling",
+    "category": "Technology",
+    "read_time": "9 min",
+    "short_description": "Learn to read and write files in Java.",
+    "full_content": "File handling is used for data storage.\n\nClasses:\n- File\n- FileReader\n- FileWriter\n\nUsed in real applications.",
+    "tags": ["Java", "File Handling"]
+  },
+
+  {
+    "title": "Java Collections Framework",
+    "category": "Technology",
+    "read_time": "12 min",
+    "short_description": "Understand lists, sets, and maps in Java.",
+    "full_content": "Collections store groups of data.\n\nTypes:\n- List\n- Set\n- Map\n\nExample:\nArrayList\n\nUsed in dynamic data handling.",
+    "tags": ["Java", "Collections"]
+  },
+
+  {
+    "title": "Java ArrayList Explained",
+    "category": "Technology",
+    "read_time": "7 min",
+    "short_description": "Learn how to use ArrayList.",
+    "full_content": "ArrayList is dynamic array.\n\nMethods:\n- add()\n- remove()\n- get()\n\nUsed in flexible storage.",
+    "tags": ["Java", "ArrayList"]
+  },
+
+  {
+    "title": "Java HashMap Explained",
+    "category": "Technology",
+    "read_time": "8 min",
+    "short_description": "Learn key-value storage using HashMap.",
+    "full_content": "HashMap stores key-value pairs.\n\nExample:\nmap.put(key,value);\n\nUsed in fast lookup.",
+    "tags": ["Java", "HashMap"]
+  },
+
+  {
+    "title": "Java Multithreading Basics",
+    "category": "Technology",
+    "read_time": "10 min",
+    "short_description": "Learn how to run multiple threads in Java.",
+    "full_content": "Multithreading improves performance.\n\nMethods:\n- Thread class\n- Runnable interface\n\nUsed in concurrent applications.",
+    "tags": ["Java", "Multithreading"]
+  },
+
+  {
+    "title": "Java Synchronization",
+    "category": "Technology",
+    "read_time": "9 min",
+    "short_description": "Prevent thread conflicts using synchronization.",
+    "full_content": "Synchronization controls thread access.\n\nUsed in multi-threaded programs.",
+    "tags": ["Java", "Synchronization"]
+  },
+
+  {
+    "title": "Java Lambda Expressions",
+    "category": "Technology",
+    "read_time": "8 min",
+    "short_description": "Learn functional programming using lambda.",
+    "full_content": "Lambda simplifies code.\n\nExample:\n(x) -> x+1\n\nUsed in streams.",
+    "tags": ["Java", "Lambda"]
+  },
+
+  {
+    "title": "Java Streams API",
+    "category": "Technology",
+    "read_time": "10 min",
+    "short_description": "Process data using streams.",
+    "full_content": "Streams allow functional operations.\n\nMethods:\n- filter()\n- map()\n- collect()\n\nUsed for data processing.",
+    "tags": ["Java", "Streams"]
+  },
+
+  {
+    "title": "Java JDBC Connectivity",
+    "category": "Technology",
+    "read_time": "12 min",
+    "short_description": "Connect Java with databases.",
+    "full_content": "JDBC connects Java with DB.\n\nSteps:\n- Load driver\n- Create connection\n- Execute query\n\nUsed in backend apps.",
+    "tags": ["Java", "JDBC"]
+  },
+
+  {
+    "title": "Java Swing GUI Basics",
+    "category": "Technology",
+    "read_time": "10 min",
+    "short_description": "Create desktop GUI apps using Swing.",
+    "full_content": "Swing builds UI apps.\n\nComponents:\n- JFrame\n- JButton\n\nUsed in desktop apps.",
+    "tags": ["Java", "Swing"]
+  },
+
+  {
+    "title": "Java AWT Basics",
+    "category": "Technology",
+    "read_time": "9 min",
+    "short_description": "Learn GUI programming using AWT.",
+    "full_content": "AWT is older GUI toolkit.\n\nUsed for basic UI.",
+    "tags": ["Java", "AWT"]
+  },
+
+  {
+    "title": "Java Networking Basics",
+    "category": "Technology",
+    "read_time": "10 min",
+    "short_description": "Learn socket programming in Java.",
+    "full_content": "Networking connects systems.\n\nClasses:\n- Socket\n- ServerSocket\n\nUsed in chat apps.",
+    "tags": ["Java", "Networking"]
+  },
+
+  {
+    "title": "Java Serialization",
+    "category": "Technology",
+    "read_time": "8 min",
+    "short_description": "Convert objects into byte streams.",
+    "full_content": "Serialization stores object state.\n\nUsed in file storage.",
+    "tags": ["Java", "Serialization"]
+  },
+
+  {
+    "title": "Java Deserialization",
+    "category": "Technology",
+    "read_time": "8 min",
+    "short_description": "Convert byte stream back to object.",
+    "full_content": "Reverse of serialization.\n\nUsed in data retrieval.",
+    "tags": ["Java", "Deserialization"]
+  },
+
+  {
+    "title": "Java Generics Explained",
+    "category": "Technology",
+    "read_time": "9 min",
+    "short_description": "Write flexible and reusable code using generics.",
+    "full_content": "Generics allow type safety.\n\nExample:\nList<String>\n\nImproves code quality.",
+    "tags": ["Java", "Generics"]
+  },
+
+  {
+    "title": "Java Annotations",
+    "category": "Technology",
+    "read_time": "8 min",
+    "short_description": "Understand annotations in Java.",
+    "full_content": "Annotations provide metadata.\n\nExample:\n@Override\n\nUsed in frameworks.",
+    "tags": ["Java", "Annotations"]
+  },
+
+  {
+    "title": "Java Reflection API",
+    "category": "Technology",
+    "read_time": "10 min",
+    "short_description": "Inspect classes at runtime.",
+    "full_content": "Reflection analyzes classes.\n\nUsed in frameworks.",
+    "tags": ["Java", "Reflection"]
+  },
+
+  {
+    "title": "Java Design Patterns Overview",
+    "category": "Technology",
+    "read_time": "12 min",
+    "short_description": "Learn common design patterns in Java.",
+    "full_content": "Patterns improve code structure.\n\nExamples:\n- Singleton\n- Factory\n\nUsed in enterprise apps.",
+    "tags": ["Java", "Design Patterns"]
+  },
+
+  {
+    "title": "Java Singleton Pattern",
+    "category": "Technology",
+    "read_time": "7 min",
+    "short_description": "Ensure single instance of a class.",
+    "full_content": "Singleton restricts object creation.\n\nUsed in logging systems.",
+    "tags": ["Java", "Singleton"]
+  },
+
+  {
+    "title": "Java Factory Pattern",
+    "category": "Technology",
+    "read_time": "8 min",
+    "short_description": "Create objects using factory method.",
+    "full_content": "Factory pattern creates objects.\n\nUsed in frameworks.",
+    "tags": ["Java", "Factory"]
+  },
+
+  {
+    "title": "Java MVC Architecture",
+    "category": "Technology",
+    "read_time": "10 min",
+    "short_description": "Understand MVC design pattern.",
+    "full_content": "MVC separates logic.\n\nComponents:\n- Model\n- View\n- Controller\n\nUsed in web apps.",
+    "tags": ["Java", "MVC"]
+  },
+
+  {
+    "title": "Spring Boot Introduction",
+    "category": "Technology",
+    "read_time": "12 min",
+    "short_description": "Build Java backend apps using Spring Boot.",
+    "full_content": "Spring Boot simplifies development.\n\nUsed in REST APIs.",
+    "tags": ["Java", "Spring Boot"]
+  },
+
+  {
+    "title": "REST API using Spring Boot",
+    "category": "Technology",
+    "read_time": "12 min",
+    "short_description": "Create REST APIs in Java.",
+    "full_content": "Use @RestController.\n\nBuild CRUD APIs.\n\nUsed in backend systems.",
+    "tags": ["Java", "API"]
+  },
+
+  {
+    "title": "Java Microservices Basics",
+    "category": "Technology",
+    "read_time": "12 min",
+    "short_description": "Build scalable apps using microservices.",
+    "full_content": "Microservices split applications.\n\nUsed in large systems.",
+    "tags": ["Java", "Microservices"]
+  },
+
+  {
+    "title": "Java Memory Management",
+    "category": "Technology",
+    "read_time": "10 min",
+    "short_description": "Understand heap and stack memory.",
+    "full_content": "Memory is managed by JVM.\n\nGarbage collection cleans unused objects.",
+    "tags": ["Java", "Memory"]
+  },
+
+  {
+    "title": "Java Garbage Collection",
+    "category": "Technology",
+    "read_time": "9 min",
+    "short_description": "Learn how Java manages memory automatically.",
+    "full_content": "GC removes unused objects.\n\nImproves performance.",
+    "tags": ["Java", "Garbage Collection"]
+  },
+
+  {
+    "title": "Java Best Practices",
+    "category": "Technology",
+    "read_time": "10 min",
+    "short_description": "Write clean and professional Java code.",
+    "full_content": "Use meaningful names.\nAvoid duplication.\nFollow OOP principles.\n\nImproves maintainability.",
+    "tags": ["Java", "Best Practices"]
+  },
+
+  {
+    "title": "Java Interview Questions",
+    "category": "Technology",
+    "read_time": "15 min",
+    "short_description": "Prepare for Java interviews.",
+    "full_content": "Common questions:\n- OOP concepts\n- Collections\n- Threads\n\nUseful for job preparation.",
+    "tags": ["Java", "Interview"]
+  }
+]
