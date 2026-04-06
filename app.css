@@ -1403,3 +1403,15 @@ a {
   padding: 2px 4px;
   flex-shrink: 0;
 }
+
+/* ── Credit link ── */
+.credit-link { text-decoration: none; }
+.credit-link span {
+  font-weight: 700;
+  background: linear-gradient(115deg, var(--brand-2), var(--brand-1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: opacity .2s;
+}
+.credit-link:hover span { opacity: .75; }
